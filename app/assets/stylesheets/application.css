@@ -11,4 +11,5 @@
  *= require_self
  *= require jquery.mobile
  *= require_tree .
+ *= require goodfood
  */
