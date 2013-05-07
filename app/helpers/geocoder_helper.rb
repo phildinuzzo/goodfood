@@ -22,6 +22,8 @@
 module GeocoderHelper
 
   def get_geolocation
+    @ip = request.location
+    @location = Geocoder.search(@ip)
 
   end
 
