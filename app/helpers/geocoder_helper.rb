@@ -2,9 +2,14 @@ module GeocoderHelper
 
   def get_geolocation
     @ip = request.location
-    @location = Geocoder.search('64.71.24.19')  # replace with @ip
+    @location = Geocoder.search("64.71.24.19")    # replace with ip
     @lat_auto = @location[0].latitude
     @lng_auto = @location[0].longitude
+    @coord = @lat_auto.to_s + "," + @lng_auto.to_s
+    geo_data = Geocoder.search(@coord)
+    @street_num = geo_data[0].address_components[0]["long_name"]
+    @street_name = geo_data[0].address_components[1]["short_name"]
+    @city_name = geo_data[0].address_components[3]["long_name"]
 
   end
 
