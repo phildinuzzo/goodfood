@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 gem 'yelp'
+gem 'json', '~> 1.7.7'
 
 
 # Gems used only for assets and not required
