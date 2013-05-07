@@ -1,6 +1,5 @@
-Splash Page.
-
-<br>
+<h1 id="spalsh_title">Good Food</h1>
+<h2 id="splash_title">Near You</h2>
 
 <!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
@@ -15,11 +14,11 @@ We think you are near <b><%= @street_num %> <%= @street_name %>, <%= @city_name 
 <br><br>
 Not close enough? Tell us your location:
 
-      <form id="address_search" data-ajax = "false" action='/results' method='get'>
+      <form id="address_search" data-ajax="false" action='/results' method='get'>
         <input name='query' placeholder='Enter your address with City and State'/>
         <button id="submit">Find Good Food</button>
       </form>
 
-<a data-ajax = "false" href="/about">About</a>
+<a id="about_link" data-ajax="false" href="/about">About</a>
 
 
