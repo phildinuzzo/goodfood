@@ -10,8 +10,10 @@ A link to an About page.
 
 <!-- This gets the location automatically as a Geococer object
 which contains lat and long -->
-<% get_geolocation %>
-
+<% get_geolocation %><br>
+<%= @location %><br>
+<%= @lat_auto %><br>
+<%= @lng_auto %>
 
 <!-- This form gets the Geocoder object with the address entered in the form -->
 <br><br>

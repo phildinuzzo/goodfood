@@ -19,12 +19,22 @@
 # country = request.location.country_code
 
 
+# TEST IP ADDRESS! ~~~~
+# '64.71.24.19'
+
 module GeocoderHelper
 
   def get_geolocation
     @ip = request.location
-    @location = Geocoder.search(@ip)
+    @location = Geocoder.search('64.71.24.19')
+    @lat_auto = @location[0].latitude
+    @lng_auto = @location[0].longitude
 
+
+    # lat1 = @location[0].geometry
+    # @lat_auto = lat1['location']['lat']
+    # lng1 = @location[0].geometry
+    # @lng_auto = lat1['location']['lng']
   end
 
 end
