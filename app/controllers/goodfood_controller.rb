@@ -4,7 +4,7 @@ class GoodfoodController < ApplicationController
     #This is the code to get the Geocoder object
     # from the search box on index page and extracts lat and lng
     address = params[:query]
-    @results = Geocoder.search('640 post st, SF')   # replace with address
+    @results = Geocoder.search('640 post st, San Francisco')   # replace with address
     lat1 = @results[0].geometry
     @lat = lat1['location']['lat']
     lng1 = @results[0].geometry
