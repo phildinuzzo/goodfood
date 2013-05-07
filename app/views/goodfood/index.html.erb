@@ -6,3 +6,22 @@ No geolocation, then a box to enter address or zip code.
 Also...
 A few words about the app.
 A link to an About page.
+
+
+<!-- This gets the location automatically as a Geococer object
+which contains lat and long -->
+<% get_geolocation %><br>
+<%= @location %><br>
+<%= @lat_auto %><br>
+<%= @lng_auto %>
+
+<!-- This form gets the Geocoder object with the address entered in the form -->
+<br><br>
+Please enter your address:
+
+      <form id="address_search" action='/results' method='get'>
+        <input name='query' placeholder='Enter your address with City and State'/>
+        <button id="submit">Submit</button>
+      </form>
+
+

@@ -19,6 +19,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require goodfood.js
+//= require index.js
 //= require jquery.mobile-1.3.1.min.js
 //= jquery.mobile.min
 //= require_tree .
