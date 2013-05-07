@@ -8,12 +8,13 @@ A few words about the app.
 A link to an About page.
 
 
-<!-- This gets the location automatically as a Geococer object
+<!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
 <% get_geolocation %><br>
-<%= @location %><br>
 <%= @lat_auto %><br>
-<%= @lng_auto %>
+<%= @lng_auto %><br>
+You are near <%= @street_num %> <%= @street_name %>, <%= @city_name %><br>
+
 
 <!-- This form gets the Geocoder object with the address entered in the form -->
 <br><br>
@@ -23,5 +24,7 @@ Please enter your address:
         <input name='query' placeholder='Enter your address with City and State'/>
         <button id="submit">Submit</button>
       </form>
+
+<a href="/about">About</a>
 
 

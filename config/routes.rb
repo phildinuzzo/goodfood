@@ -1,4 +1,13 @@
 Goodfood::Application.routes.draw do
+
+
+
+
+  root :to => 'goodfood#index'
+  get '/results' => 'goodfood#results'
+  get '/about' => 'goodfood#about'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,8 +57,7 @@ Goodfood::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'goodfood#index'
-  get '/results' => 'goodfood#results'
+
 
   # See how all your routes lay out with "rake routes"
 
