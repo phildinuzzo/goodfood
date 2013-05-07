@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
       p = Provider.new
       p.token = auth['credentials']['token']
       p.uid = auth["uid"]
+      p.provider = auth['provider']
 
       user.email = auth['info']["email"]
       user.name = auth["info"]["name"]
@@ -16,6 +17,7 @@ class User < ActiveRecord::Base
     end
   end
   def self.find_with_omniauth(auth)
-    find_by_provider_and_uid(auth['provider'], auth['uid'])
+   p = Provider.where(:provider => auth['provider'], :uid => auth['uid'])
+   p.first.user
   end
 end
