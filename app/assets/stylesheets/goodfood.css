@@ -1,0 +1,36 @@
+.ui-header {
+  height: 60px;
+}
+
+#current-location {
+  clear: both;
+  position: absolute;
+  margin: 38px 0px 13px 10px;
+  font-weight: normal;
+  color: #B4B4B4;
+}
+
+.ui-header .ui-title {
+  font-size: 26px;
+  display: block;
+  margin: .2em 3% .2em;
+  text-align: left;
+  float: left;
+}
+
+.ui-link img {
+  width: 40px;
+  float: right;
+  margin: 10px;
+}
+
+#results {
+  clear: both;
+}
+
+.r_thumbnail {
+  border: 1px solid #E4E4E4;
+  margin: 3px 3px 6px 3px;
+  background-color: #FAFAFA;
+  height: 300px;
+}
