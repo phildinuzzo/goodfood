@@ -13,10 +13,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url
     elsif @user_by_email != nil
-      p = Provider.create_with_omniauth(auth)
-      session[:user_id] = @user_by_email.id
-      @user_by_email.providers << p
-      redirect_to root_url
+
     else
       created_user = User.create_with_omniauth(auth)
       session[:user_id] = created_user.id
