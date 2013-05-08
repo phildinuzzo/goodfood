@@ -14,6 +14,8 @@
 /log/*.log
 /tmp
 
-/config/api_keys*
+/config/api_keys.yml*
+/config/api_keys.yml.sample*
+
 
 testing_yelp_gem.*
