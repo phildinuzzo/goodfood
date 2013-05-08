@@ -9,8 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *
- *  !!! ANDRIS !!! I had to remove  *= require jquery.mobile
- *      the page wouldnt load. I left it in javascripts/application.js
  *
  *
  *= require_self

@@ -15,6 +15,8 @@ module GeocoderHelper
 
 end
 
+# http://www.bennadel.com/blog/2023-Geocoding-A-User-s-Location-Using-Javascript-s-GeoLocation-API.htm
+
 # TEST IP ADDRESS! ~~~~
 # '64.71.24.19'    "204.57.220.1"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
