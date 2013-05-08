@@ -1,7 +1,7 @@
 
 <!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
-<% get_geolocation %><br>
+<% get_geolocation %>
 
 <div id="near">
   <p>We think you are near:</p>
@@ -27,12 +27,13 @@ which contains lat and long -->
 
 <ul id='bottom-list'>
   <% if signed_in? %>
-    <li><a href="/sign_out">sign_out</a></li>
+    <li><a href="/sign_out">Sign In</a></li>
   <% else %>
-  <li><a href="/about" data-ajax="false">About</a></li>
-  <li><a href="/auth/facebook" data-ajax="false">Facebook</a></li>
-  <li><a href="/auth/google_oauth2" data-ajax="false">Google</a></li>
+    <li><a href="/sign_in">Sign In</a></li>
   <% end %>
+  <li><a href="/about" data-ajax="false">About</a></li>
+  <!-- <li><a href="/auth/facebook" data-ajax="false">Facebook</a></li>
+  <li><a href="/auth/google_oauth2" data-ajax="false">Google</a></li> -->
 </ul>
 
 
