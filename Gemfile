@@ -7,7 +7,7 @@ gem 'jquery_mobile_rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pry'
-
+gem 'sqlite3'
 gem 'geocoder'
 
 # Gems used only for assets and not required

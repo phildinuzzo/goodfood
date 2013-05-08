@@ -1,22 +1,20 @@
 
-<h1 id="spalsh_title">Good Food</h1>
-<h2 id="splash_title">Near You</h2>
-
 <!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
 <% get_geolocation %><br>
-<%= @lat_auto %><br>
-<%= @lng_auto %><br>
+
+
 <div id="near">
   <p>We think you are near:</p>
 </div>
   <div id="geo-location">
     <span><%= @street_num %> <%= @street_name %>, <%= @city_name %></span>
   </div>
-<button>Find Good Food</button>
 
+      <form id="address_search" data-ajax="false" action='/results' method='get'>
+        <button id="submit">Find Good Food</button>
+      </form>
 
-<p>OR</p>
 
 <!-- This form gets the Geocoder object with the address entered in the form -->
 <div id="not-close">
