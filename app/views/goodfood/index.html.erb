@@ -4,6 +4,9 @@ which contains lat and long -->
 <% get_geolocation %>
 
 <div id="near">
+  <% if signed_in? %>
+    <h1>Hello <%= current_user.name %></h1>
+  <% end %>
   <p>We think you are near:</p>
 </div>
 
@@ -27,9 +30,9 @@ which contains lat and long -->
 
 <ul id='bottom-list'>
   <% if signed_in? %>
-    <li><a href="/sign_out">Sign In</a></li>
+    <li><a href="/sign_out">Sign Out</a></li>
   <% else %>
-    <li><a href="/sign_in">Sign In</a></li>
+    <li><a href="/auth/facebook">Sign In</a></li>
   <% end %>
   <li><a href="/about" data-ajax="false">About</a></li>
   <!-- <li><a href="/auth/facebook" data-ajax="false">Facebook</a></li>
