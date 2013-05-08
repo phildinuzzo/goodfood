@@ -8,7 +8,14 @@ gem 'jquery_mobile_rails'
 
 gem 'pry'
 gem 'sqlite3'
+
+
+gem 'yelp'
+gem 'json', '~> 1.7.7'
+
+
 gem 'geocoder'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/config/api_keys*
+
+testing_yelp_gem.*
