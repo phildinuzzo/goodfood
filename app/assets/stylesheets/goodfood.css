@@ -2,6 +2,10 @@ p {
   font-family: 'Open Sans', sans-serif;
 }
 
+div.ui-page.ui-body-c.ui-page-active {
+  min-height: 100%;
+}
+
 /* ------- INDEX -------- */
 
 #current-location {
@@ -78,8 +82,9 @@ h1 {
 }
 
 .r_thumbnail {
-  border: 1px solid #E4E4E4;
-  margin: 3px 3px 6px 3px;
+  border: 1px solid rgba(238, 238, 238, 0.58);
+  box-shadow: 0px 1px 2px #E7E7E7;
+  margin: 4px auto;
   background-color: #FAFAFA;
   height: 16em;
   max-width: 24em;
