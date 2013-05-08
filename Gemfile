@@ -10,8 +10,8 @@ gem 'pry'
 gem 'sqlite3'
 
 
-gem 'yelp'
 gem 'json', '~> 1.7.7'
+gem 'yelp'
 
 
 gem 'geocoder'
