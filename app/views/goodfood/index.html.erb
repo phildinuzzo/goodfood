@@ -1,0 +1,34 @@
+
+<!-- This gets the location automatically as a Geocoder object
+which contains lat and long -->
+<% get_geolocation %><br>
+
+<div id="near">
+  <p>We think you are near:</p>
+</div>
+
+  <div id="geo-location">
+    <span><%= @street_num %> <%= @street_name %>, <%= @city_name %></span>
+  </div>
+
+  <form id="address_search" data-ajax="false" action='/results' method='get'>
+    <button id="submit">Find Good Food</button>
+  </form>
+
+<!-- This form gets the Geocoder object with the address entered in the form -->
+<div id="not-close">
+  <p>Not close enough? Tell us your location:</p>
+</div>
+
+  <form id="address_search" data-ajax="false" action='/results' method='get'>
+    <input name='query' placeholder='Enter your address with City and State'/>
+    <button id="submit">Find Good Food</button>
+  </form>
+
+<ul id='bottom-list'>
+  <li><a href="/about" data-ajax="false">About</a></li>
+  <li><a href="/login" data-ajax="false">Log In</a></li>
+</ul>
+
+
+

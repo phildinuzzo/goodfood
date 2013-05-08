@@ -1,18 +1,28 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'jquery_mobile_rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'pry'
 gem 'sqlite3'
+
 
 gem 'yelp'
 gem 'json', '~> 1.7.7'
 
 
+gem 'geocoder'
+
+
 # Gems used only for assets and not required
 # in production environments by default.
+group :development do
+  gem 'meta_request'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -24,6 +34,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
