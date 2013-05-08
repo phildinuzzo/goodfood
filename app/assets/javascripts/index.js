@@ -16,8 +16,6 @@ function onPositionUpdate(position)
 
     // APPEND ERROR TO INDEX PAGE
 
-
-
 // var test = $.getJSON( "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat_and_lng + "&sensor=true")
 
 // var street_num = JSON.parse(test.responseText)
