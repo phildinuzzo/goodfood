@@ -75,7 +75,8 @@ h1 {
   border: 1px solid #E4E4E4;
   margin: 3px 3px 6px 3px;
   background-color: #FAFAFA;
-  height: 300px;
+  height: 16em;
+  max-width: 24em;
 }
 
 .ui-input-text.ui-body-c {
