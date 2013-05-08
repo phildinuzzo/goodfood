@@ -10,7 +10,7 @@ gem 'sqlite3'
 
 
 gem 'json', '~> 1.7.7'
-gem 'yelp', :git => "git://github.com/nanek/yelp.git"
+gem 'yelp', '1.0.0', :git => "https://github.com/nanek/yelp.git"
 
 
 gem 'geocoder'
