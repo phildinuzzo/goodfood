@@ -10,6 +10,27 @@
   color: #B4B4B4;
 }
 
+#geo-location {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#near {
+  text-align: center;
+}
+
+#not-close {
+  text-align: center;
+  margin-top: 15%;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .ui-header .ui-title {
   font-size: 26px;
   display: block;
@@ -33,4 +54,29 @@
   margin: 3px 3px 6px 3px;
   background-color: #FAFAFA;
   height: 300px;
+}
+
+.ui-input-text.ui-body-c {
+  background: white;
+}
+
+.ui-page {
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+::-webkit-input-placeholder {
+  color: #DADADA;
+}
+
+:-moz-placeholder {
+  color: #DADADA;
+}
+
+::-moz-placeholder {
+  color: #DADADA;
+}
+
+:-ms-input-placeholder {
+  color: #DADADA;
 }
