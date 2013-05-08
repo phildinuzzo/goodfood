@@ -4,7 +4,7 @@ Goodfood::Application.routes.draw do
   get '/results' => 'goodfood#results'
   get '/about' => 'goodfood#about'
   match '/auth/:provider/callback' => 'sessions#create'
-  match 'signout' => 'sessions#destroy', :as => :signout
+  match 'sign_out' => 'sessions#destroy', :as => :signout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

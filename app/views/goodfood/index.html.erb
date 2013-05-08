@@ -26,8 +26,14 @@ which contains lat and long -->
   </form>
 
 <ul id='bottom-list'>
+  <% if signed_in? %>
+    <li><a href="/sign_out">Sign In</a></li>
+  <% else %>
+    <li><a href="/sign_in">Sign In</a></li>
+  <% end %>
   <li><a href="/about" data-ajax="false">About</a></li>
-  <li><a href="/login" data-ajax="false">Log In</a></li>
+  <!-- <li><a href="/auth/facebook" data-ajax="false">Facebook</a></li>
+  <li><a href="/auth/google_oauth2" data-ajax="false">Google</a></li> -->
 </ul>
 
 

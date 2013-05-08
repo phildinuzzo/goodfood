@@ -6,12 +6,11 @@ gem 'jquery_mobile_rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pry'
-gem 'sqlite3'
+gem 'pg'
 
 
-gem 'yelp'
 gem 'json', '~> 1.7.7'
+gem 'yelp', '1.0.0', :git => "https://github.com/nanek/yelp.git"
 
 
 gem 'geocoder'
@@ -21,6 +20,7 @@ gem 'geocoder'
 # in production environments by default.
 group :development do
   gem 'meta_request'
+  gem 'pry'
 end
 
 group :assets do
