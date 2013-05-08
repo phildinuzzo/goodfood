@@ -3,14 +3,18 @@ which contains lat and long -->
 <% get_geolocation %><br>
 <%= @lat_auto %><br>
 <%= @lng_auto %><br>
+
 <div id="near">
   <p>We think you are near:</p>
 </div>
-  <div id="geo-location">
-    <span><%= @street_num %> <%= @street_name %>, <%= @city_name %></span>
-  </div>
-<button>Find Good Food</button>
 
+<div id="geo-location">
+  <span><%= @street_num %> <%= @street_name %>, <%= @city_name %></span>
+</div>
+
+<div id='address_search'>
+  <button>Find Good Food</button>
+</div>
 <!-- This form gets the Geocoder object with the address entered in the form -->
 <div id="not-close">
   <p>Not close enough? Tell us your location:</p>
@@ -21,6 +25,10 @@ which contains lat and long -->
         <button id="submit">Find Good Food</button>
       </form>
 
-<a href="/about" data-ajax="false">About</a>
+<ul id='bottom-list'>
+  <li><a href="/about" data-ajax="false">About</a></li>
+  <li><a href="/login" data-ajax="false">Log In</a></li>
+</ul>
+
 
 

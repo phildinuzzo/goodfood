@@ -1,11 +1,10 @@
-.ui-header {
-  height: 60px;
+p {
+  font-family: 'Open Sans', sans-serif;
 }
 
+/* ------- INDEX -------- */
+
 #current-location {
-  clear: both;
-  position: absolute;
-  margin: 38px 0px 13px 10px;
   font-weight: normal;
   color: #B4B4B4;
 }
@@ -18,6 +17,11 @@
   margin-bottom: 10%;
 }
 
+#address_search {
+  max-width: 24em;
+  margin: auto;
+}
+
 #near {
   text-align: center;
 }
@@ -27,8 +31,26 @@
   margin-top: 15%;
 }
 
-p {
-  font-family: 'Open Sans', sans-serif;
+#bottom-list li {
+  list-style-type: none;
+  display: inline;
+}
+
+ul#bottom-list{
+  text-align: center;
+  margin-right: 2.4em;
+}
+
+/*-------- RESULTS --------*/
+
+#header-right {
+  width: 15em;
+  float: left;
+  margin-left: .5em;
+}
+
+h1 {
+  margin: .1em 0 0 0;
 }
 
 .ui-header .ui-title {
@@ -65,18 +87,27 @@ p {
   box-sizing: border-box;
 }
 
+.ui-header {
+  height: 60px;
+}
+
 ::-webkit-input-placeholder {
   color: #DADADA;
+  text-align: center;
 }
 
 :-moz-placeholder {
   color: #DADADA;
+  text-align: center;
 }
 
 ::-moz-placeholder {
   color: #DADADA;
+  text-align: center;
 }
 
 :-ms-input-placeholder {
   color: #DADADA;
+  text-align: center;
 }
+
