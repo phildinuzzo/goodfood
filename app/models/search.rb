@@ -1,6 +1,4 @@
 class Search
-  ENV['GOOGLE_PLACES'] = 'AIzaSyDgjPw63xd4qJZ50P7a-vdvjx6FQHxX8CI'
-  ENV['YELP_WSID'] = 'tQd1EAsNyd6Pmdmt653HzA'
 
 
   def google_places_info(coordinates, name)
