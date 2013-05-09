@@ -1,7 +1,7 @@
 class Search
 
 
-  def google_places_info(coordinates, name)
+  def self.google_places_info(coordinates, name)
     place = name
     name_array = place.split(" ")
     spot = name_array[0]
@@ -33,7 +33,7 @@ class Search
     google_info
   end
 
-  def good_food_places_info(address, city, state)
+  def self.good_food_places_info(address, city, state)
     client = Yelp::Client.new
     request = Yelp::Review::Request::Location.new(
                 :address => address,
@@ -57,7 +57,7 @@ class Search
         coordinates = "#{latitude},#{longitude}"
         categories = (y['categories'].map {|c| c['category_filter'] }).map(&:capitalize).join(', ')
 
-        google_info = google_places_info(coordinates, name)
+        google_info = self.google_places_info(coordinates, name)
 
         place_info = {name: name,
                       open: google_info['is_open'],
