@@ -110,7 +110,7 @@ h1 {
   text-align: center;
 }
 
-#login-inner {
+#login-inner, #search-inner {
   margin-top: 35%;
   padding: 2em 2.4em;
   overflow: hidden;
@@ -130,9 +130,23 @@ h1 {
   max-width: 450px;
 }
 
+#close a {
+  position: absolute;
+  top: -.1em;
+  left: 0;
+  display: block;
+  text-align: center;
+  width: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  color: #000;
+  padding: .2em;
+}
+
 @media screen
 and (max-width:455px) {
-  #login-inner {
+  #login-inner, #search-inner {
   padding: 2em .7em;
   }
 }
@@ -146,6 +160,10 @@ and (max-width : 320px) {
 
   #login-inner {
     padding: 2em .6em;
+  }
+
+  #search-inner {
+  padding: 1.2em .6em 2em .6em;
   }
 
   .ui-link img {
