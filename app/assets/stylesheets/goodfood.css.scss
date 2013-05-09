@@ -1,0 +1,155 @@
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+div.ui-page.ui-body-c.ui-page-active {
+  min-height: 100%;
+}
+
+/* ------- INDEX -------- */
+
+#current-location {
+  font-weight: normal;
+  color: #B4B4B4;
+}
+
+#geo-location {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#address_search {
+  max-width: 24em;
+  margin: auto;
+}
+
+#near {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#not-close {
+  text-align: center;
+  margin-top: 15%;
+}
+
+#bottom-list li {
+  list-style-type: none;
+  display: inline;
+}
+
+ul#bottom-list{
+  text-align: center;
+  margin-top: 15%;
+  margin-right: 2.4em;
+}
+
+a.ui-link {
+  text-decoration: none;
+}
+
+/*-------- RESULTS --------*/
+
+#header-right {
+  width: 15em;
+  float: left;
+  margin-left: .5em;
+}
+
+h1 {
+  margin: .1em 0 0 0;
+}
+
+.ui-header .ui-title {
+  font-size: 26px;
+  display: block;
+  margin: .2em 3% .2em;
+  text-align: left;
+  float: left;
+}
+
+.ui-link img {
+  width: 40px;
+  float: right;
+  margin: 10px;
+}
+
+#results {
+  clear: both;
+}
+
+.r_thumbnail {
+  border: 1px solid rgba(238, 238, 238, 0.58);
+  box-shadow: 0px 1px 2px #E7E7E7;
+  margin: 4px auto;
+  background-color: #FAFAFA;
+  height: 16em;
+  max-width: 24em;
+}
+
+.ui-input-text.ui-body-c {
+  background: white;
+}
+
+.ui-page {
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.ui-header {
+  height: 60px;
+}
+
+::-webkit-input-placeholder {
+  color: #DADADA;
+  text-align: center;
+}
+
+#login-inner {
+  margin-top: 9em;
+  padding: 2em 2.4em;
+  overflow: hidden;
+  background-color: white;
+}
+
+#login-with {
+  padding: .4em;
+  font-size: 2.3em;
+  color: #464646;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.ui-dialog-contain {
+  max-width: 450px;
+}
+
+@media screen and (max-width:455px) {
+  #login-inner {
+  padding: 2em .7em;
+}
+}
+
+.ui-overlay-shadow {
+  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
+  -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
+  box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
+}
+
+:-moz-placeholder {
+  color: #DADADA;
+  text-align: center;
+}
+
+::-moz-placeholder {
+  color: #DADADA;
+  text-align: center;
+}
+
+:-ms-input-placeholder {
+  color: #DADADA;
+  text-align: center;
+}

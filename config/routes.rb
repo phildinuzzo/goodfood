@@ -3,6 +3,7 @@ Goodfood::Application.routes.draw do
   root :to => 'goodfood#index'
   get '/results' => 'goodfood#results'
   get '/about' => 'goodfood#about'
+  get '/login' => 'goodfood#login'
   match '/auth/:provider/callback' => 'sessions#create'
   match 'sign_out' => 'sessions#destroy', :as => :signout
 
