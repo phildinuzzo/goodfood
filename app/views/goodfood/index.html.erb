@@ -31,8 +31,12 @@ which contains lat and long -->
 <ul id='bottom-list'>
   <% if signed_in? %>
     <li><a href="/sign_out">Sign Out</a></li>
+
+
   <% else %>
-    <li><a href="/auth/facebook" data-ajax="false">Sign In</a></li>
+
+    <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+
   <% end %>
   <li id="divider"> | </li>
   <li><a href="/about" data-ajax="false">About</a></li>

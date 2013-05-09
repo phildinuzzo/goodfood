@@ -18,6 +18,9 @@ class GoodfoodController < ApplicationController
     # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
   end
 
+  def login
+  end
+
 end
 
 
