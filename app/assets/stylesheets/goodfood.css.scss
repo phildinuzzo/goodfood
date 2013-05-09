@@ -109,7 +109,7 @@ h1 {
 }
 
 #login-inner {
-  margin-top: 9em;
+  margin-top: 35%;
   padding: 2em 2.4em;
   overflow: hidden;
   background-color: white;
@@ -127,10 +127,23 @@ h1 {
   max-width: 450px;
 }
 
-@media screen and (max-width:455px) {
+@media screen
+and (max-width:455px) {
   #login-inner {
   padding: 2em .7em;
+  }
 }
+
+@media only screen
+and (max-width : 320px) {
+  #login-with {
+  padding: .2em;
+  font-size: 2.4em;
+  }
+
+  #login-inner {
+  padding: 2em .6em;
+  }
 }
 
 .ui-overlay-shadow {
