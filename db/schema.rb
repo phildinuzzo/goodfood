@@ -11,10 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130508184926) do
+ActiveRecord::Schema.define(:version => 20130509011314) do
 
   create_table "providers", :force => true do |t|
-    t.integer  "uid"
+    t.decimal  "uid"
     t.string   "provider"
     t.string   "token"
     t.datetime "created_at", :null => false
