@@ -10,7 +10,7 @@ class GoodfoodController < ApplicationController
         lat1 = @results[0].geometry
         @lat = lat1['location']['lat']
         lng1 = @results[0].geometry
-        @lng = lat1['location']['lng']
+        @lng = lng1['location']['lng']
         @city = @results[0].address_components[3]["long_name"]
     rescue
         redirect_to :back
@@ -24,7 +24,6 @@ class GoodfoodController < ApplicationController
   def search
 
   end
-
 end
 
 
