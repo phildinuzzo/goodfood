@@ -43,6 +43,8 @@ require 'google_places'
 # place_open = check_open(coordinates, name)
 
 
+ENV['GOOGLE_PLACES'] = 'AIzaSyDgjPw63xd4qJZ50P7a-vdvjx6FQHxX8CI'
+ENV['YELP_WSID'] = 'tQd1EAsNyd6Pmdmt653HzA'
 
 def google_places_info(coordinates, name)
   place = name
@@ -119,7 +121,9 @@ def good_food_places_info(address, city, state)
   end
   good_food.reject! { |c| c.nil? }
 end
-puts JSON.pretty_generate good_food
+
+puts JSON.pretty_generate good_food_places_info("414 Brennan", "San Francisco", "CA")
+
 
 
 # Yelp search by phone number
