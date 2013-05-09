@@ -14,6 +14,7 @@ gem 'yelp', '1.0.0', :git => "https://github.com/nanek/yelp.git"
 
 
 gem 'geocoder'
+gem 'google_places'
 
 
 # Gems used only for assets and not required
