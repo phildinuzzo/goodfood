@@ -20,7 +20,7 @@ which contains lat and long -->
   <p>Not close enough? Tell us your location:</p>
 </div>
 
-  <form id="address_search" action='/results' method='get'>
+  <form id="address_search" action='/results' data-transition="pop" method='get'>
     <input name='query' placeholder='Enter your address with City and State'/>
     <button id="submit">Find Good Food</button>
   </form>
@@ -33,8 +33,6 @@ which contains lat and long -->
   <% end %>
   <li id="divider"> | </li>
   <li><a href="/about" data-ajax="false">About</a></li>
-  <!-- <li><a href="/auth/facebook" data-ajax="false">Facebook</a></li>
-  <li><a href="/auth/google_oauth2" data-ajax="false">Google</a></li> -->
 </ul>
 
 
