@@ -1,7 +1,6 @@
 
 <!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
-<% get_geolocation %>
 
 <div id="near">
   <% if signed_in? %>
@@ -11,7 +10,9 @@ which contains lat and long -->
 </div>
 
   <div id="geo-location">
-    <span><%= @street_num %> <%= @street_name %>, <%= @city_name %></span>
+    <span id="street-num"></span>
+    <span id="street-name"></span>,
+    <span id="city-name"></span>
   </div>
 
 
