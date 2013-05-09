@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :location
-  has_many :providers
   validates :email, :uniqueness => true
+
+  has_many :providers
+  has_many :favorites
 
   # creates the User object with omniauth hash
   def self.create_with_omniauth(auth)
