@@ -145,6 +145,8 @@ h1 {
   padding: .2em;
 }
 
+/* --------- Media Queries --------- */
+
 @media screen
 and (max-width:455px) {
   #login-inner, #search-inner {
@@ -172,7 +174,14 @@ and (max-width : 320px) {
     float: right;
     margin: .3em;
   }
+
+  .ui-link img {
+    width: 3em;
+    float: right;
+    margin: .4em .7em .4em .4em;
+  }
 }
+/* --------------------------------- */
 
 .ui-overlay-shadow {
   -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
