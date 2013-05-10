@@ -26,6 +26,8 @@ which contains lat and long -->
     <button id="submit">Find Good Food</button>
   </form>
 
+  <%= render 'autocomplete' %>
+
 <ul id='bottom-list'>
   <% if signed_in? %>
     <li><a href="/sign_out">Sign Out</a></li>
