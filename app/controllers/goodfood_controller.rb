@@ -24,11 +24,6 @@ class GoodfoodController < ApplicationController
     # @lng = lng1['location']['lng']
     # @city = @results[0].address_components[3]["long_name"]
 
-<<<<<<< HEAD
-    #### Pass in the data you want here ####
-=======
-
->>>>>>> 4409c5ad7edcc22037de4dbb18057fc5f107e991
     @lat = params[:lat]
     @lng = params[:lng]
     coords = @lat + "," + @lng
