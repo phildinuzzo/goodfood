@@ -18,7 +18,7 @@ class Search
     end
 
     if one_spot.nil? || one_spot['photos'].nil?
-      google_info['photo'] = "Not available"
+      google_info['photo'] = "nophoto.png"
     else
       photo_ref = one_spot['photos'][0]['photo_reference']
       google_info['photo'] = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo_ref}&sensor=true&key=#{ENV['GOOGLE_PLACES']}"

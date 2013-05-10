@@ -61,6 +61,37 @@ a.ui-link {
 
 h1 {
   margin: .1em 0 0 0;
+  clear: both;
+}
+
+hr {
+  border-top: 1px solid #F1F1F1;
+}
+
+.category {
+  margin-bottom: .9em;
+  color: #E98D29;
+}
+
+.address {
+  float: left;
+  width: 15em;
+}
+
+.phone {
+  color: #44689C;
+  float: left;
+  margin-top: .5em;
+  font-size: 1.2em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.review_count {
+  clear: both;
+  float: left;
+  color: #A0A0A0;
+  font-size: 1em;
+  margin-top: 2em;
 }
 
 .ui-header .ui-title {
@@ -83,13 +114,26 @@ h1 {
 }
 
 .r_thumbnail {
+  padding: .1em 1em;
   -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
   -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
   box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
   margin: .4em auto;
   background-color: #FAFAFA;
-  height: 16em;
+  min-height: 13em;
   max-width: 24em;
+}
+
+.r_name {
+  width: 14em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  color: #464646;
+  font-weight: 300;
+}
+
+.status {
+  float: right;
 }
 
 .ui-input-text.ui-body-c {
@@ -145,6 +189,32 @@ h1 {
   color: #000;
   padding: .2em;
 }
+
+.open {
+  color: #31C731;
+  display: block;
+  margin-top: .6em;
+}
+
+.close {
+  display: block;
+  margin-top: .6em;
+  color: red;
+}
+
+.yelp_thmb {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  float: right;
+}
+
+.yelp_thmb img {
+  max-height: 150px;
+  float: right;
+}
+
+
 
 /* --------- Media Queries --------- */
 
