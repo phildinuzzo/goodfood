@@ -25,10 +25,12 @@ which contains lat and long -->
     <button id="submit">Find Good Food</button>
   </form>
 
+
 <span id="unhide_address"><p>Click to enter a different address</p></span>
 <div class="hide">
   <%= render 'autocomplete' %>
 </div>
+
 
 <ul id='bottom-list'>
   <% if signed_in? %>
