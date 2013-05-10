@@ -1,6 +1,12 @@
 // var lat_and_lng = "37.7841804,-122.39427649999999"
 
 $(document).ready(function(){
+  // $(document).bind('pageinit')
+
+  $('#unhide_address').tap( function () {
+    var hidden = $('.hide');
+    hidden.removeClass('hide');
+  });
 
   function onPositionUpdate(position) {
     var lat = position.coords.latitude;

@@ -1,7 +1,6 @@
 class GoodfoodController < ApplicationController
 
   def index
-
     # @ip = request.env["REMOTE_ADDR"]
     # @location = Geocoder.search(@ip)    # replace with ip
     # @lat_auto = @location[0].latitude
@@ -16,16 +15,7 @@ class GoodfoodController < ApplicationController
   end
 
 
-
   def results
-    # address = params[:query]
-    # @results = Geocoder.search('640 post st, sf')   # !!!!!replace with address variable!!!!!
-    # lat1 = @results[0].geometry
-    # @lat = lat1['location']['lat']
-    # lng1 = @results[0].geometry
-    # @lng = lng1['location']['lng']
-    # @city = @results[0].address_components[3]["long_name"]
-
 
     @lat = params[:lat]
     @lng = params[:lng]
@@ -36,9 +26,16 @@ class GoodfoodController < ApplicationController
     @city = @geo_data[0].address_components[3]["long_name"]
     @state = @geo_data[0].address_components[4]["short_name"]
     @street = @st_num + "" + @st_name
-
-    @s = Search.good_food_places_info(@street, @city, @state)
-
+    if params[:query] != nil
+      whole_address = params[:query]
+      address_array = whole_address.split(",")
+      street1 = address_array[0]
+      city1 = address_array[1]
+      state1 = address_array[2]
+      @s = Search.good_food_places_info(street1, city1, state1)
+    else
+      @s = Search.good_food_places_info(@street, @city, @state)
+    end
   # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
   end
 

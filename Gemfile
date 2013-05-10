@@ -10,7 +10,7 @@ gem 'pg'
 
 
 gem 'json', '~> 1.7.7'
-gem 'yelpster'
+gem 'yelp', '1.0.0', :git => "https://github.com/nanek/yelp.git"
 gem 'google_places'
 
 gem 'geocoder'

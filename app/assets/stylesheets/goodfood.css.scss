@@ -26,6 +26,27 @@ div.ui-page.ui-body-c.ui-page-active {
   margin: auto;
 }
 
+#unhide_address p {
+  margin-top: 5%;
+  margin-bottom: -1%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+#panel {
+  max-width: 28em;
+  margin: auto;
+}
+
+#searchTextField {
+  max-width: 28em;
+  margin: auto;
+}
+
 #near {
   text-align: center;
   margin-top: 25%;
