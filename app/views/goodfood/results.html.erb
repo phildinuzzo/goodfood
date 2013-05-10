@@ -3,17 +3,27 @@
     <h1>GoodFood</h1>
     <div id='current-location'><%= @city %></div>
   </div>
+
+
   <div id='location_btn'>
     <a href="/search" data-rel="dialog" data-transition="flip"><%= image_tag('location.png') %></a>
   </div>
 </div>
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <div id="results">
-  <div class="r_thumbnail">
+<!--   <div class="r_thumbnail">
   </div>
 
   <div class="r_thumbnail">
-  </div>
+  </div> -->
+
+<% @s.each do |i| %>
+<div class="r_thumbnail">
+  <%= i[:name] %>
+</div>
+<% end %>
+
+
 
 
 <ul id='bottom-list'>

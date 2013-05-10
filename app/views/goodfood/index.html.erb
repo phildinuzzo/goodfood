@@ -4,25 +4,29 @@ which contains lat and long -->
 
 <div id="near">
   <% if signed_in? %>
-    <h1>Hello <%= current_user.name %></h1>
+    <h3>Hello <%= current_user.name %></h3>
   <% end %>
-  <p>We think you are near:</p>
+  <p>You are near:</p>
 </div>
+
+
+
+
+
+
 
   <div id="geo-location">
     <span id="street-num"></span>
-    <span id="street-name"></span>,
+    <span id="street-name"></span>
     <span id="city-name"></span>
   </div>
 
 
 <!-- This form gets the Geocoder object with the address entered in the form -->
-<div id="not-close">
-  <p>Not close enough? Tell us your location:</p>
-</div>
+
 
   <form id="address_search" action='/results' data-transition="pop" method='get'>
-    <input name='query' placeholder='Enter your address with City and State'/>
+
     <button id="submit">Find Good Food</button>
   </form>
 

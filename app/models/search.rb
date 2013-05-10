@@ -71,9 +71,11 @@ class Search
                       photo_url: google_info['photo'],
                       coordinates: coordinates}
 
+
         place_info
       end
     end
-    good_food.reject! { |c| c.nil? }
+    # raise good_food.inspect
+    good_food.reject { |c| c.nil? }
   end
 end
