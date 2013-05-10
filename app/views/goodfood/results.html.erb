@@ -9,11 +9,44 @@
 </div>
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 <div id="results">
+  <% @s.each do |i| %>
   <div class="r_thumbnail">
-  </div>
 
-  <div class="r_thumbnail">
+    <span class="r_name"><%= i[:name] %></span>
+
+    <div class='status'>
+      <% if i[:open] %>
+            <span class='open'>OPEN</span>
+      <% else %>
+            <span class='close'>CLOSED</span>
+      <% end %>
+    </div>
+
+    <hr>
+    <div class="yelp_thmb">
+      <%= image_tag i[:photo_url] %>
+    </div>
+
+    <div class='category'>
+      <%= i[:categories] %>
+    </div>
+
+    <div class='address'>
+      <%= i[:address] %>
+    </div>
+
+    <div class='phone'>
+      <%= i[:phone] %>
+    </div>
+
+    <div class='review_count'>
+      <%= i[:review_count] %>
+    </div>
+
+    <%= i[:yelp_raiting] %>
+    <%= i[:google_raiting] %>
   </div>
+<% end %>
 
 
 <ul id='bottom-list'>
