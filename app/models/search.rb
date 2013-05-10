@@ -39,13 +39,13 @@ class Search
                 :address => address,
                 :city => city,
                 :state => state,
-                :radius => 2,
+                :radius => 1.5,
                 :term => 'food',
                 :yws_id => ENV['YELP_WSID'])
     response = client.search(request)['businesses']
 
     good_food = response.map do |y|
-      if (y['avg_rating'] >= 4) && (y['review_count'] >= 100)
+      if (y['avg_rating'] >= 4) && (y['review_count'] >= 30)
         name = y['name']
         yelp_avg_rating = y['avg_rating']
         address = "#{y['address1']}, #{y['city']}, #{y['state']} #{y['zip']}"

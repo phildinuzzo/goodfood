@@ -9,6 +9,7 @@
 
     <style>
       input {
+        max-width: 70%;
         border: 1px solid  rgba(0, 0, 0, 0.5);
       }
       input.notfound {
@@ -96,9 +97,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
   </head>
   <body>
     <div id="panel">
-      <input id="searchTextField" type="text" >
-      <input type="hidden" name="type" id="changetype-geocode">
 
+      <form accept-charset="UTF-8" action="/results" method="get">
+        <input id="searchTextField" type="text" name="query" placeholder="Enter an address to search">
+        <input type="hidden" name="type" id="changetype-geocode">
+    </form>
     </div>
     <div id="map-canvas"></div>
   </body>
