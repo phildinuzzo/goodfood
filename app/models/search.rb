@@ -1,5 +1,13 @@
-class Search
+module Enumerable
+  def threaded_map
+    threads = map do |object|
+      Thread.new { yield object }
+    end
+    threads.map(&:value)
+  end
+end
 
+class Search
 
   def self.google_places_info(coordinates, name)
     place = name
@@ -18,7 +26,7 @@ class Search
     end
 
     if one_spot.nil? || one_spot['photos'].nil?
-      google_info['photo'] = "nophoto.png"
+      google_info['photo'] = "Not available"
     else
       photo_ref = one_spot['photos'][0]['photo_reference']
       google_info['photo'] = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=#{photo_ref}&sensor=true&key=#{ENV['GOOGLE_PLACES']}"
@@ -35,33 +43,36 @@ class Search
 
   def self.good_food_places_info(address, city, state)
     client = Yelp::Client.new
-    request = Yelp::Review::Request::Location.new(
-                :address => address,
-                :city => city,
-                :state => state,
-                :radius => 2,
-                :term => 'food',
-                :yws_id => ENV['YELP_WSID'])
+    request = Yelp::V2::Search::Request::Location.new(
+      :term => "food",
+      :address => address,
+      :city => city,
+      :state => state,
+      :consumer_key => ENV['YELP_KEY'],
+      :consumer_secret => ENV['YELP_SECRET'],
+      :token => ENV['YELP_TOKEN'],
+      :token_secret => ENV['YELP_TOKEN_SECRET']
+    )
     response = client.search(request)['businesses']
 
-    good_food = response.map do |y|
-      if (y['avg_rating'] >= 4) && (y['review_count'] >= 100)
+    good_food = response.threaded_map do |y|
+      if (y['rating'] >= 4) && (y['review_count'] >= 100)
         name = y['name']
-        yelp_avg_rating = y['avg_rating']
-        address = "#{y['address1']}, #{y['city']}, #{y['state']} #{y['zip']}"
+        yelp_avg_rating = y['rating']
+        address = "#{y['location']['address'][0]}, #{y['location']['city']}, #{y['location']['state_code']} #{y['location']['postal_code']}"
         phone = y['phone']
         review_count = y['review_count']
         url = y['url']
-        latitude = y['latitude']
-        longitude = y['longitude']
+        latitude = y['location']['coordinate']['latitude']
+        longitude = y['location']['coordinate']['longitude']
         coordinates = "#{latitude},#{longitude}"
-        categories = (y['categories'].map {|c| c['category_filter'] }).map(&:capitalize).join(', ')
+        categories = (y['categories'].map {|c| c[0] }).map(&:capitalize).join(', ') unless y['categories'].nil?
 
-        google_info = self.google_places_info(coordinates, name)
+        google_info = google_places_info(coordinates, name)
 
         place_info = {name: name,
                       open: google_info['is_open'],
-                      categories: categories,
+                      categories: categories || [],
                       yelp_rating: yelp_avg_rating,
                       google_rating: google_info['rating'],
                       address: address,
@@ -71,11 +82,14 @@ class Search
                       photo_url: google_info['photo'],
                       coordinates: coordinates}
 
-
         place_info
       end
     end
-    # raise good_food.inspect
-    good_food.reject { |c| c.nil? }
+    good_food.reject! { |c| c.nil? }
+    if good_food == []
+      "Sorry! There's no good food there."
+    else
+      good_food
+    end
   end
 end
