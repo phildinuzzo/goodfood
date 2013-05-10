@@ -23,7 +23,6 @@ class GoodfoodController < ApplicationController
     # @lng = lng1['location']['lng']
     # @city = @results[0].address_components[3]["long_name"]
 
-    #### Pass in the data you want here ####
     @lat = params[:lat]
     @lng = params[:lng]
     coords = @lat + "," + @lng
@@ -35,12 +34,7 @@ class GoodfoodController < ApplicationController
     @street = @st_num + "" + @st_name
 
     @s = Search.good_food_places_info(@street, @city, @state)
-            # raise @s.inspect
-    # @s.each do |i|
-      # @name = @s[i][:name]
-    #   @phone = @s[i][:phone]
 
-    #  play around with this hash object that I called above phil
   # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
   end
 
