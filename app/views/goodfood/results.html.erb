@@ -3,6 +3,8 @@
     <h1>GoodFood</h1>
     <div id='current-location'><%= @city %></div>
   </div>
+
+
   <div id='location_btn'>
     <a href="/search" data-rel="dialog" data-transition="flip"><%= image_tag('location.png') %></a>
   </div>
@@ -47,6 +49,7 @@
     <%= i[:google_raiting] %>
   </div>
 <% end %>
+
 
 
 <ul id='bottom-list'>

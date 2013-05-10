@@ -15,6 +15,25 @@ $(document).ready(function(){
         $('#street-num').html(geo_data.street_num);
         $('#street-name').html(geo_data.street_name);
         $('#city-name').html(geo_data.city_name);
+        $('form').append(
+        $('<input/>')
+            .attr('type', 'hidden')
+            .attr('name', 'lat')
+            .val(geo_data.latitude)
+             );
+        $('form').append(
+        $('<input/>')
+            .attr('type', 'hidden')
+            .attr('name', 'lng')
+            .val(geo_data.longitude)
+             );
+
+
+
+
+
+
+
       },
       error: function() {
       }
