@@ -5,8 +5,8 @@
   </div>
 
 
-  <div id='location_btn'>
-    <a href="/search" data-rel="dialog" data-transition="flip"><%= image_tag('location.png') %></a>
+  <div id='location_btn' data-icon="bars">
+    <a href="/search" data-rel="dialog" data-transition="flip"></a>
   </div>
 </div>
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -41,12 +41,13 @@
       <%= i[:phone] %>
     </div>
 
-    <div class='review_count'>
-      <%= i[:review_count] %>
+    <div class='reviews'>
+      <ul>
+        <li class='review_count'>Review Count:<%= i[:review_count] %></li>
+        <li class='yelp_rating'><%= i[:yelp_rating] %></li>
+        <li class='google_rating'><%= i[:google_rating] %></li>
+      </ul>
     </div>
-
-    <%= i[:yelp_raiting] %>
-    <%= i[:google_raiting] %>
   </div>
 <% end %>
 

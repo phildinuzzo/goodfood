@@ -2,20 +2,18 @@ class GoodfoodController < ApplicationController
 
   def index
 
-    # @ip = request.env["REMOTE_ADDR"]
-    # @location = Geocoder.search(@ip)    # replace with ip
-    # @lat_auto = @location[0].latitude
-    # @lng_auto = @location[0].longitude
-    # @coord = @lat_auto.to_s + "," + @lng_auto.to_s
-    # geo_data = Geocoder.search(@coord)
-    # unless geo_data.empty?
-    #   @street_num = geo_data[0].address_components[0]["long_name"]
-    #   @street_name = geo_data[0].address_components[1]["short_name"]
-    #   @city_name = geo_data[0].address_components[3]["long_name"]
-    # end
+  #   @ip = request.env["REMOTE_ADDR"]
+  #   @location = Geocoder.search(@ip)    # replace with ip
+  #   @lat_auto = @location[0].latitude
+  #   @lng_auto = @location[0].longitude
+  #   @coord = @lat_auto.to_s + "," + @lng_auto.to_s
+  #   geo_data = Geocoder.search(@coord)
+  #   unless geo_data.empty?
+  #     @street_num = geo_data[0].address_components[0]["long_name"]
+  #     @street_name = geo_data[0].address_components[1]["short_name"]
+  #     @city_name = geo_data[0].address_components[3]["long_name"]
+  #   end
   end
-
-
 
   def results
     # address = params[:query]
@@ -26,7 +24,11 @@ class GoodfoodController < ApplicationController
     # @lng = lng1['location']['lng']
     # @city = @results[0].address_components[3]["long_name"]
 
+<<<<<<< HEAD
+    #### Pass in the data you want here ####
+=======
 
+>>>>>>> 4409c5ad7edcc22037de4dbb18057fc5f107e991
     @lat = params[:lat]
     @lng = params[:lng]
     coords = @lat + "," + @lng
@@ -54,7 +56,6 @@ class GoodfoodController < ApplicationController
     response[:latitude] = lat
     response[:longitude] = lng
     render :json => response
-
   end
 
   def login

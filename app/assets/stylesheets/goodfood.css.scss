@@ -1,5 +1,8 @@
+$OpenFont: 'Open Sans', sans-serif;
+
+
 p {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
 }
 
 div.ui-page.ui-body-c.ui-page-active {
@@ -14,7 +17,7 @@ div.ui-page.ui-body-c.ui-page-active {
 }
 
 #geo-location {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
   font-weight: 600;
   font-size: 1.3em;
   text-align: center;
@@ -83,15 +86,32 @@ hr {
   float: left;
   margin-top: .5em;
   font-size: 1.2em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
 }
 
-.review_count {
+.review_count, .yelp_rating, .google_rating {
+  font-family: $OpenFont;
+  font-weight: 300;
+  font-size: .75em;
+}
+
+.count_number {
+  font-size: .8;
+}
+
+.reviews {
   clear: both;
-  float: left;
-  color: #A0A0A0;
-  font-size: 1em;
-  margin-top: 2em;
+}
+
+.reviews ul {
+  list-style-type: none;
+  display: inline;
+  padding-left: 0px;
+}
+
+.reviews ul li {
+  margin-right: 1em;
+  display: inline;
 }
 
 .ui-header .ui-title {
@@ -126,7 +146,7 @@ hr {
 
 .r_name {
   width: 14em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
   font-size: 1.5em;
   color: #464646;
   font-weight: 300;
@@ -167,7 +187,7 @@ hr {
   padding: .4em;
   font-size: 2.3em;
   color: #464646;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
   font-weight: 300;
 }
 
@@ -183,7 +203,7 @@ hr {
   display: block;
   text-align: center;
   width: 1em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $OpenFont;
   font-weight: 300;
   font-size: 1em;
   color: #000;

@@ -1,6 +1,8 @@
 
 <!-- This gets the location automatically as a Geocoder object
 which contains lat and long -->
+<a href="#nav-panel" class="jqm-navmenu-link ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
+  <span class="ui-btn-inner"><span class="ui-btn-text">Navigation</span><span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span></span></a>
 
 <div id="near">
   <% if signed_in? %>
@@ -9,22 +11,12 @@ which contains lat and long -->
   <p>You are near:</p>
 </div>
 
-
-
-
-
-
-
   <div id="geo-location">
     <span id="street-num"></span>
     <span id="street-name"></span>
     <span id="city-name"></span>
   </div>
-
-
 <!-- This form gets the Geocoder object with the address entered in the form -->
-
-
   <form id="address_search" action='/results' data-transition="pop" method='get'>
 
     <button id="submit">Find Good Food</button>
@@ -42,5 +34,12 @@ which contains lat and long -->
   <li><a href="/about" data-ajax="false">About</a></li>
 </ul>
 
+<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+        <ul data-role="listview" data-theme="a" class="nav-search">
+            <li data-icon="delete"><a data-rel="close">Close menu</a></li>
+            <li><a href="#panel-fixed-page2">Accessibility</a></li>
+            <li><a href="#panel-fixed-page2">Accordions</a></li>
+        </ul>
+</div>
 
 
