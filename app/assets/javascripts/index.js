@@ -6,6 +6,7 @@ $(document).ready(function(){
   $('#unhide_address').tap( function () {
     var hidden = $('.hide');
     hidden.removeClass('hide');
+    $('#unhide_address').addClass('hide');
   });
 
   function onPositionUpdate(position) {
