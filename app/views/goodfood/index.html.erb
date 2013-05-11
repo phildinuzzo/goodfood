@@ -4,13 +4,10 @@
   <%= render 'menu' %>
 
   <div data-role="content">
-    <a href="#nav-panel" data-icon="bars" class="jqm-navmenu-link"></a>
-    <a href="#nav-panel" class="jqm-navmenu-link ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
-      <span class="ui-btn-inner">
-        <span class="ui-btn-text">Navigation</span>
-        <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
-      </span>
-    </a>
+
+    <div id='menu-panel'>
+        <a href="#nav-panel" class="box-shadow-menu" title="Navigation"><span id='menu-link'></span></a>
+    </div>
 
     <div id="near">
       <% if signed_in? %>
