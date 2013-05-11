@@ -84,11 +84,20 @@ a.ui-link {
   margin: 3% 5%;
 }
 
+#menu-link {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  top: 0;
+  left: 0;
+}
+
 .box-shadow-menu {
   position: relative;
   padding-left: 1.25em;
 }
 .box-shadow-menu:before {
+  border-radius: 2px;
   content: "";
   position: absolute;
   left: 0;
@@ -96,9 +105,7 @@ a.ui-link {
   width: 1.9em;
   height: 0.35em;
   background: #ADADAD;
-  box-shadow:
-    0 0.5em 0 0 #ADADAD,
-    0 1em 0 0 #ADADAD;
+  box-shadow: 0 0.6em 0 0 #ADADAD, 0 1.15em 0 0 #ADADAD;
 }
 
 #header-right {
@@ -270,15 +277,24 @@ hr {
 .yelp_thmb {
   width: 100px;
   height: 100px;
-  overflow: hidden;
+  margin: 0 auto;
+  overflow:hidden;
+  position: relative;
   float: right;
 }
 
 .yelp_thmb img {
   max-height: 150px;
   float: right;
+  border-radius: 3px;
+  border: 1px solid #ACACAC;
 }
 
+.yelp_thmb img.absolute{
+    left: 50%;
+    margin-left: -50px;
+    position:absolute;
+}
 
 
 /* --------- Media Queries --------- */
@@ -293,6 +309,31 @@ and (max-width:455px) {
 
 @media only screen
 and (max-width : 320px) {
+  .ui-content {
+    padding: 1.5%;
+  }
+
+  .r_thumbnail {
+  padding: .1em 2.5%;
+  }
+
+  .r_name {
+    font-size: 1.11em;
+  }
+
+  .open, .close {
+    font-size: .9em;
+  }
+
+  .yelp_thmb {
+    width: 80px;
+    height: 80px;
+  }
+
+  .address {
+    width: 12em;
+  }
+
   #login-with {
     padding: .2em;
     font-size: 2.1em;
