@@ -79,9 +79,13 @@ a.ui-link {
 
 /*-------- RESULTS --------*/
 
+.ui-content {
+  padding: 2%;
+}
+
 #menu-panel {
   float: right;
-  margin: 3% 5%;
+  margin: 1em 7%;
 }
 
 #menu-link {
@@ -130,7 +134,7 @@ hr {
 
 .address {
   float: left;
-  width: 15em;
+  width: 13em;
 }
 
 .phone {
@@ -286,6 +290,8 @@ hr {
 .yelp_thmb img {
   max-height: 150px;
   float: right;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #ACACAC;
 }
@@ -303,6 +309,14 @@ hr {
 and (max-width:455px) {
   #login-inner, #search-inner {
   padding: 2em .7em;
+  }
+
+  .close, .open {
+    font-size: .8em;
+  }
+
+  .r_name {
+    font-size: 1.3em;
   }
 
 }
@@ -362,8 +376,8 @@ and (max-width : 320px) {
 /* --------------------------------- */
 
 .ui-overlay-shadow {
-  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
   -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
+  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
   box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
 }
 
