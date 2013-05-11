@@ -47,17 +47,14 @@ class Search
     google_info
   end
 
-  def self.good_food_places_info(address, city, state)
+  def self.good_food_places_info(latitude, longitude)
     client = Yelp::Client.new
-    request = Yelp::V2::Search::Request::Location.new(
+    request = Yelp::V2::Search::Request::GeoPoint.new(
       :term => "food",
-      :address => address,
-      :city => city,
-      :state => state,
-      # :latitude => latitude,
-      # :longitude => longitude,
+      :latitude => latitude,
+      :longitude => longitude,
       :sort => 1,
-      :radius_filter => 3000, # in meters!!!
+      # :radius_filter => 3000, # in meters!!!
       :consumer_key => ENV['YELP_KEY'],
       :consumer_secret => ENV['YELP_SECRET'],
       :token => ENV['YELP_TOKEN'],
@@ -66,6 +63,7 @@ class Search
     response = client.search(request)['businesses']
 
     good_food = response.threaded_map do |y|
+
       if (y['rating'] >= 4) && (y['review_count'] >= 50)
         name = y['name']
         yelp_avg_rating = y['rating']
@@ -76,11 +74,12 @@ class Search
         longitude = y['location']['coordinate']['longitude']
         coordinates = "#{latitude},#{longitude}"
         categories = (y['categories'].map {|c| c[0] }).map(&:capitalize).join(', ') unless y['categories'].nil?
-
+        distance = y['distance']
         google_info = google_places_info(coordinates, name)
         address = "#{google_info['address']}, #{y['location']['state_code']} #{y['location']['postal_code']}"
 
         place_info = {name: name,
+                      distance: distance,
                       open: google_info['is_open'],
                       categories: categories || [],
                       yelp_rating: yelp_avg_rating,

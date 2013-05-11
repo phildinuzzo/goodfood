@@ -28,13 +28,12 @@ class GoodfoodController < ApplicationController
     @street = @st_num + "" + @st_name
     if params[:query] != nil
       whole_address = params[:query]
-      address_array = whole_address.split(",")
-      street1 = address_array[0]
-      city1 = address_array[1]
-      state1 = address_array[2]
-      @s = Search.good_food_places_info(street1, city1, state1)
+      location = Geocoder.search(whole_address)
+      lat1 = location[0].latitude
+      lng1 = location[0].longitude
+      @s = Search.good_food_places_info(lat1, lng1)
     else
-      @s = Search.good_food_places_info(@street, @city, @state)
+      @s = Search.good_food_places_info(@lat, @lng)
     end
   # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
   end
