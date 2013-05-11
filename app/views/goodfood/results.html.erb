@@ -1,107 +1,148 @@
-<div data-role="header" data-position="fixed">
-  <div id='header-right'>
-    <h1>GoodFood</h1>
-    <div id='current-location'><%= @city %></div>
+<div data-role='page'>
+
+  <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+        <ul data-role="listview" data-theme="a">
+            <li href="/results" data-icon="delete"><a data-rel="close">Close menu</a></li>
+            <li><a >Accessibility</a></li>
+            <li><a >Accordions</a></li>
+        </ul>
   </div>
 
+  <div data-role="header" data-position="fixed">
+    <div id='header-right'>
+      <h1>GoodFood</h1>
+      <div id='current-location'><%= @city %></div>
 
-  <div id='location_btn'>
-    <a href="/search" data-rel="dialog" data-transition="flip"><%= image_tag('location.png') %></a>
+        <a href="#nav-panel" class="jqm-navmenu-link ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
+          <span class="ui-btn-inner">
+            <span class="ui-btn-text">Navigation</span>
+            <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
+          </span>
+        </a>
+    </div>
+
+
+<!--     <div id='location_btn' data-icon="bars">
+      <a href="/search" data-rel="dialog" data-transition="flip"></a>
+    </div> -->
   </div>
-</div>
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-<div id="results">
-  <% if @s == "Sorry! There's no good food there." %>
-    <div class="r_thumbnail">Sorry, good food is too far away!"</div>"
-  <% else %>
-    <% @s.each do |i| if i[:open] ==  true %>
-    <div class="r_thumbnail">
+  <div data-role="content">
+    <div id="results">
+      <% if @s = "Sorry! There's no good food there." %>
+        <div class="r_thumbnail">Sorry, good food is too far away!</div>
+      <% else %>
+      <% @s.each do |i| if i[:open] == true %>
+      <div class="r_thumbnail">
 
-      <span class="r_name"><%= i[:name] %></span>
+        <span class="r_name"><%= i[:name] %></span>
 
-      <div class='status'>
-        <% if i[:open] %>
-              <span class='open'>OPEN</span>
-        <% else %>
-              <span class='close'>CLOSED</span>
-        <% end %>
+        <div class='status'>
+          <% if i[:open] %>
+                <span class='open'>OPEN</span>
+          <% else %>
+                <span class='close'>CLOSED</span>
+          <% end %>
+        </div>
+
+        <hr>
+        <div class="yelp_thmb">
+          <%= image_tag i[:photo_url] %>
+        </div>
+
+        <div class='category'>
+          <%= i[:categories] %>
+        </div>
+
+        <div class='address'>
+          <%= i[:address] %>
+        </div>
+
+        <div class='phone'>
+          <%= i[:phone] %>
+        </div>
+
+        <div class='reviews'>
+          <ul>
+            <li class='review_count'>Review Count:<%= i[:review_count] %></li>
+            <li class='yelp_rating'><%= i[:yelp_rating] %></li>
+            <li class='google_rating'><%= i[:google_rating] %></li>
+          </ul>
+        </div>
+
+        <div class='favorite'>
+          <% if current_user.favorites.map{|f| f.address == i[:address]} == true %>
+            <span class="saved">SAVED</span>
+          <% else %>
+            <span class="notsaved">SAVE</span>
+          <% end %>
+        </div>
+
       </div>
-
-      <hr>
-      <div class="yelp_thmb">
-        <%= image_tag i[:photo_url] %>
-      </div>
-
-      <div class='category'>
-        <%= i[:categories] %>
-      </div>
-
-      <div class='address'>
-        <%= i[:address] %>
-      </div>
-
-      <div class='phone'>
-        <%= i[:phone] %>
-      </div>
-
-      <div class='review_count'>
-        <%= i[:review_count] %>
-      </div>
-
-      <%= i[:yelp_raiting] %>
-      <%= i[:google_raiting] %>
-    </div>
     <% else %><% end %>
-  <% end %>
+    <% end %>
+<% @s.each do |i| if i[:open] == false %>
+      <div class="r_thumbnail">
 
-  <% @s.each do |i| if i[:open] == false %>
-    <div class="r_thumbnail">
+        <span class="r_name"><%= i[:name] %></span>
 
-      <span class="r_name"><%= i[:name] %></span>
+        <div class='status'>
+          <% if i[:open] %>
+                <span class='open'>OPEN</span>
+          <% else %>
+                <span class='close'>CLOSED</span>
+          <% end %>
+        </div>
 
-      <div class='status'>
-        <% if i[:open] %>
-              <span class='open'>OPEN</span>
-        <% else %>
-              <span class='close'>CLOSED</span>
-        <% end %>
+        <hr>
+        <div class="yelp_thmb">
+          <%= image_tag i[:photo_url] %>
+        </div>
+
+        <div class='category'>
+          <%= i[:categories] %>
+        </div>
+
+        <div class='address'>
+          <%= i[:address] %>
+        </div>
+
+        <div class='phone'>
+          <%= i[:phone] %>
+        </div>
+
+        <div class='reviews'>
+          <ul>
+            <li class='review_count'>Review Count:<%= i[:review_count] %></li>
+            <li class='yelp_rating'><%= i[:yelp_rating] %></li>
+            <li class='google_rating'><%= i[:google_rating] %></li>
+          </ul>
+        </div>
+
+        <div class='favorite'>
+          <% if current_user.favorites.map{|f| f.address == i[:address]} == true %>
+            <span class="saved">SAVED</span>
+          <% else %>
+            <span class="notsaved">SAVE</span>
+          <% end %>
+        </div>
+
       </div>
-
-      <hr>
-      <div class="yelp_thmb">
-        <%= image_tag i[:photo_url] %>
-      </div>
-
-      <div class='category'>
-        <%= i[:categories] %>
-      </div>
-
-      <div class='address'>
-        <%= i[:address] %>
-      </div>
-
-      <div class='phone'>
-        <%= i[:phone] %>
-      </div>
-
-      <div class='review_count'>
-        <%= i[:review_count] %>
-      </div>
-
-      <%= i[:yelp_raiting] %>
-      <%= i[:google_raiting] %>
-    </div>
     <% else %><% end %>
-  <% end %>
-<% end %>
+    <% end %>
+    <% end %>
 
-<ul id='bottom-list'>
-  <% if signed_in? %>
-    <li><a href="/sign_out">Sign Out</a></li>
-  <% else %>
-    <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
-  <% end %>
-  <li id="divider"> | </li>
-  <li><a href="/about" data-ajax="false">About</a></li>
-</ul>
-</div>
+
+      <ul id='bottom-list'>
+        <% if signed_in? %>
+          <li><a href="/sign_out">Sign Out</a></li>
+        <% else %>
+          <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+        <% end %>
+        <li id="divider"> | </li>
+        <li><a href="/about" data-ajax="false">About</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div> <!-- End of Page -->

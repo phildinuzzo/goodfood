@@ -1,46 +1,53 @@
+<<<<<<< HEAD
+<div data-role="page">
 
-<!-- This gets the location automatically as a Geocoder object
-which contains lat and long -->
-
-<div id="near">
-  <% if signed_in? %>
-    <h3>Hello <%= current_user.name %></h3>
-  <% end %>
-  <p>You are near:</p>
-</div>
-
-
-
-  <div id="geo-location">
-    <span id="street-num"></span>
-    <span id="street-name"></span>
-    <span id="city-name"></span>
+  <div data-role="panel" id="nav-panel">
+      <ul href="/" data-role="listview" class="nav-search">
+          <li data-icon="delete"><a data-rel="close">Close menu</a></li>
+          <li><a href="#panel-fixed-page2">Accessibility</a></li>
+          <li><a href="#panel-fixed-page2">Accordions</a></li>
+      </ul>
   </div>
 
+  <div data-role="content">
+    <a href="#nav-panel" data-icon="bars" class="jqm-navmenu-link"></a>
+    <a href="#nav-panel" class="jqm-navmenu-link ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
+      <span class="ui-btn-inner">
+        <span class="ui-btn-text">Navigation</span>
+        <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
+      </span>
+    </a>
 
-<!-- This form gets the Geocoder object with the address entered in the form -->
+    <div id="near">
+      <% if signed_in? %>
+        <h3>Hello <%= current_user.name %></h3>
+      <% end %>
+      <p>You are near:</p>
+    </div>
 
+    <div id="geo-location">
+      <span id="street-num"></span>
+      <span id="street-name"></span>
+      <span id="city-name"></span>
+    </div>
+  <!-- This form gets the Geocoder object with the address entered in the form -->
+    <form id="address_search" action='/results' data-transition="pop" method='get'>
+      <button id="submit">Find Good Food</button>
+    </form>
 
-  <form id="address_search" action='/results' data-transition="pop" method='get'>
-    <button id="submit">Find Good Food</button>
-  </form>
+    <span id="unhide_address"><p>Click to enter a different address</p></span>
+    <div class="hide">
+      <%= render 'autocomplete' %>
+    </div>
 
-
-<span id="unhide_address"><p>Click to enter a different address</p></span>
-<div class="hide">
-  <%= render 'autocomplete' %>
+    <ul id='bottom-list'>
+      <% if signed_in? %>
+        <li><a href="/sign_out">Sign Out</a></li>
+      <% else %>
+        <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+      <% end %>
+      <li id="divider"> | </li>
+      <li><a href="/about" data-ajax="false">About</a></li>
+    </ul>
+  </div>
 </div>
-
-
-<ul id='bottom-list'>
-  <% if signed_in? %>
-    <li><a href="/sign_out">Sign Out</a></li>
-  <% else %>
-    <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
-  <% end %>
-  <li id="divider"> | </li>
-  <li><a href="/about" data-ajax="false">About</a></li>
-</ul>
-
-
-
