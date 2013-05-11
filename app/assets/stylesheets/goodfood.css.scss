@@ -1,4 +1,5 @@
 $OpenFont: 'Open Sans', sans-serif;
+$blue: #39A2E7;
 
 
 p {
@@ -13,10 +14,11 @@ div.ui-page.ui-body-c.ui-page-active {
 
 #current-location {
   font-weight: normal;
-  color: #B4B4B4;
+  color: $blue;
 }
 
 #geo-location {
+  height: 1.4em;
   font-family: $OpenFont;
   font-weight: 600;
   font-size: 1.3em;
@@ -42,13 +44,24 @@ div.ui-page.ui-body-c.ui-page-active {
 
 #panel {
   max-width: 24em;
-  min-width: 24em;
   margin: auto;
 }
 
+.hide {
+  min-width: 100%;
+}
+
 #searchTextField {
+  height: 1.9em;
+  padding-top: .2em;
+  border: 0;
+  font-size: 1.2em;
+  color: $blue;
+  line-height: 1em;
+  max-height: 2em;
   max-width: 24em;
-  min-width: 24em;
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0);
   margin: auto;
 }
 
