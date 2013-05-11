@@ -4,10 +4,7 @@
       <a href="/" data-rel="back">X</a>
     </div>
     <span id="login-with">Search</span>
-      <form id="address_search" action='/results' method='get'>
-      <input name='query' placeholder='Enter your address with City and State'/>
-      <button id="submit">Find Good Food</button>
-    </form>
+  <%= render 'autocomplete' %>
 
   </div>
 </div>

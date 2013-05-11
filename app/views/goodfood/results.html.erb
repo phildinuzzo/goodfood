@@ -29,7 +29,10 @@
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div data-role="content">
     <div id="results">
-      <% @s.each do |i| %>
+      <% if @s = "Sorry! There's no good food there." %>
+        <div class="r_thumbnail">Sorry, good food is too far away!</div>
+      <% else %>
+      <% @s.each do |i| if i[:open] == true %>
       <div class="r_thumbnail">
 
         <span class="r_name"><%= i[:name] %></span>
@@ -76,8 +79,58 @@
         </div>
 
       </div>
+    <% else %><% end %>
     <% end %>
+<% @s.each do |i| if i[:open] == false %>
+      <div class="r_thumbnail">
 
+        <span class="r_name"><%= i[:name] %></span>
+
+        <div class='status'>
+          <% if i[:open] %>
+                <span class='open'>OPEN</span>
+          <% else %>
+                <span class='close'>CLOSED</span>
+          <% end %>
+        </div>
+
+        <hr>
+        <div class="yelp_thmb">
+          <%= image_tag i[:photo_url] %>
+        </div>
+
+        <div class='category'>
+          <%= i[:categories] %>
+        </div>
+
+        <div class='address'>
+          <%= i[:address] %>
+        </div>
+
+        <div class='phone'>
+          <%= i[:phone] %>
+        </div>
+
+        <div class='reviews'>
+          <ul>
+            <li class='review_count'>Review Count:<%= i[:review_count] %></li>
+            <li class='yelp_rating'><%= i[:yelp_rating] %></li>
+            <li class='google_rating'><%= i[:google_rating] %></li>
+          </ul>
+        </div>
+
+        <div class='favorite'>
+          <% if current_user.favorites.map{|f| f.address == i[:address]} == true %>
+            <span class="saved">SAVED</span>
+          <% else %>
+            <span class="notsaved">SAVE</span>
+          <% end %>
+        </div>
+
+      </div>
+    <% else %><% end %>
+    <% end %>
+    <% end %>
 
 
       <ul id='bottom-list'>

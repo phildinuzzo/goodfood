@@ -38,6 +38,12 @@ class Search
       google_info['rating'] = one_spot['rating']
     end
 
+    if one_spot.nil? || one_spot['vicinity'].nil?
+      google_info['address'] = "Not available"
+    else
+      google_info['address'] = one_spot['vicinity']
+    end
+
     google_info
   end
 
@@ -48,6 +54,10 @@ class Search
       :address => address,
       :city => city,
       :state => state,
+      # :latitude => latitude,
+      # :longitude => longitude,
+      :sort => 1,
+      :radius_filter => 3000, # in meters!!!
       :consumer_key => ENV['YELP_KEY'],
       :consumer_secret => ENV['YELP_SECRET'],
       :token => ENV['YELP_TOKEN'],
@@ -56,10 +66,9 @@ class Search
     response = client.search(request)['businesses']
 
     good_food = response.threaded_map do |y|
-      if (y['rating'] >= 4) && (y['review_count'] >= 100)
+      if (y['rating'] >= 4) && (y['review_count'] >= 50)
         name = y['name']
         yelp_avg_rating = y['rating']
-        address = "#{y['location']['address'][0]}, #{y['location']['city']}, #{y['location']['state_code']} #{y['location']['postal_code']}"
         phone = y['phone']
         review_count = y['review_count']
         url = y['url']
@@ -69,6 +78,7 @@ class Search
         categories = (y['categories'].map {|c| c[0] }).map(&:capitalize).join(', ') unless y['categories'].nil?
 
         google_info = google_places_info(coordinates, name)
+        address = "#{google_info['address']}, #{y['location']['state_code']} #{y['location']['postal_code']}"
 
         place_info = {name: name,
                       open: google_info['is_open'],
