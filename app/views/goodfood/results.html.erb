@@ -29,7 +29,7 @@
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div data-role="content">
     <div id="results">
-      <% if @s = "Sorry! There's no good food there." %>
+      <% if @s == "Sorry! There's no good food there." %>
         <div class="r_thumbnail">Sorry, good food is too far away!</div>
       <% else %>
       <% @s.each do |i| if i[:open] == true %>
@@ -70,13 +70,6 @@
           </ul>
         </div>
 
-        <div class='favorite'>
-          <% if current_user.favorites.map{|f| f.address == i[:address]} == true %>
-            <span class="saved">SAVED</span>
-          <% else %>
-            <span class="notsaved">SAVE</span>
-          <% end %>
-        </div>
 
       </div>
     <% else %><% end %>
@@ -119,13 +112,7 @@
           </ul>
         </div>
 
-        <div class='favorite'>
-          <% if current_user.favorites.map{|f| f.address == i[:address]} == true %>
-            <span class="saved">SAVED</span>
-          <% else %>
-            <span class="notsaved">SAVE</span>
-          <% end %>
-        </div>
+
 
       </div>
     <% else %><% end %>
