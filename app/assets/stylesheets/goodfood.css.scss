@@ -41,12 +41,14 @@ div.ui-page.ui-body-c.ui-page-active {
 }
 
 #panel {
-  max-width: 28em;
+  max-width: 24em;
+  min-width: 24em;
   margin: auto;
 }
 
 #searchTextField {
-  max-width: 28em;
+  max-width: 24em;
+  min-width: 24em;
   margin: auto;
 }
 

@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Places Autocomplete</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-
-    <style>
-      input {
-        max-width: 70%;
-        border: 1px solid  rgba(0, 0, 0, 0.5);
-      }
-      input.notfound {
-        border: 2px solid  rgba(255, 0, 0, 0.4);
-      }
-    </style>
 
     <script>
     function initialize() {
@@ -98,7 +85,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <div id="panel">
 
       <form accept-charset="UTF-8" action="/results" method="get">
-        <input id="searchTextField" type="text" name="query" placeholder="Enter an address to search">
+        <input id="searchTextField" type="text" name="query" placeholder="">
         <input type="hidden" name="type" id="changetype-geocode">
     </form>
     </div>
