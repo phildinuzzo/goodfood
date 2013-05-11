@@ -1,27 +1,23 @@
 <div data-role='page'>
 
-  <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
-        <ul data-role="listview" data-theme="a">
-            <li href="/results" data-icon="delete"><a data-rel="close">Close menu</a></li>
-            <li><a >Accessibility</a></li>
-            <li><a >Accordions</a></li>
-        </ul>
-  </div>
+  <%= render 'menu' %>
 
   <div data-role="header" data-position="fixed">
     <div id='header-right'>
       <h1>GoodFood</h1>
       <div id='current-location'><%= @city %></div>
 
-        <a href="#nav-panel" class="jqm-navmenu-link ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
+        <!-- <a href="#nav-panel" class="jqm-navmenu-link ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-a" data-icon="bars" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a" title="Navigation">
           <span class="ui-btn-inner">
             <span class="ui-btn-text">Navigation</span>
             <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
           </span>
-        </a>
+        </a> -->
     </div>
 
-
+    <div id='menu-panel'>
+        <a href="#nav-panel" class="box-shadow-menu" title="Navigation"></a>
+    </div>
 <!--     <div id='location_btn' data-icon="bars">
       <a href="/search" data-rel="dialog" data-transition="flip"></a>
     </div> -->

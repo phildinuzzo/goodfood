@@ -1,0 +1,15 @@
+
+<div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
+        <ul data-role="listview" data-theme="a">
+            <li href="/results" data-icon="delete"><a data-rel="close">Close menu</a></li>
+            <li>
+              <% if signed_in? %>
+                  <li><a href="/sign_out">Sign Out</a></li>
+              <% else %>
+                  <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+              <% end %>
+            </li>
+            <li></li>
+            <li><a href="/about" data-ajax="false">About</a></li>
+        </ul>
+  </div>

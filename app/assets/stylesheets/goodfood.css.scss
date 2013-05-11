@@ -77,6 +77,28 @@ a.ui-link {
 
 /*-------- RESULTS --------*/
 
+#menu-panel {
+  float: right;
+  margin: 3% 5%;
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.25em;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 1.9em;
+  height: 0.35em;
+  background: #ADADAD;
+  box-shadow:
+    0 0.5em 0 0 #ADADAD,
+    0 1em 0 0 #ADADAD;
+}
+
 #header-right {
   width: 15em;
   float: left;
