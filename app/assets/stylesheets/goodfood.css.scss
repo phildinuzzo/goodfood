@@ -86,7 +86,7 @@ ul#bottom-list{
   margin-right: 2.4em;
 }
 
-.phone a.ui-link {
+.phone a.ui-link, .address a.ui-link {
   text-decoration: none;
   color: #000;
   font-weight: 300;
@@ -358,7 +358,36 @@ hr {
   background-size: 1.6em 1.4em;
 }
 
+.map-icon {
+  opacity: 0.45;
+  display: inline-block;
+}
 
+.map-icon {
+  background: url(location.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
+}
+
+.map-star {
+  clear: both;
+  position: absolute;
+  right: 1em;
+  width: 20%;
+  bottom: .5em;
+}
+
+.map-star ul {
+  list-style-type: none;
+  display: inline;
+}
+
+.map-star ul li {
+  display: inline-block;
+}
 
 /* --------- Media Queries --------- */
 

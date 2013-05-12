@@ -44,7 +44,7 @@
         </div>
 
         <div class='address'>
-          <%= i[:address] %><a href="https://maps.google.com/?q=<%= i[:address] %>">MAP</a>
+          <a href="https://maps.google.com/?q=<%= i[:address] %>"><%= i[:address] %></a>
         </div>
 
         <div class='phone'>
@@ -56,6 +56,13 @@
             <li class='review_count'>Review Count:<%= i[:review_count] %></li>
             <li class='yelp_rating'><a href='' class='yelp-icon'>Y</a><%= i[:yelp_rating] %></li>
             <li class='google_rating'><a href='' class='google-icon'>G</a><%= i[:google_rating] %></li>
+          </ul>
+        </div>
+
+        <div class='map-star'>
+          <ul>
+            <li class='favorite-star'></li>
+            <li ><a href="https://maps.google.com/?q=<%= i[:address] %>" class="map-icon">M</a></li>
           </ul>
         </div>
 
