@@ -9,36 +9,42 @@
         <a href="#nav-panel" class="box-shadow-menu" title="Navigation"><span id='menu-link'></span></a>
     </div>
 
-    <div id="near">
-      <% if signed_in? %>
-        <h3>Hello <%= current_user.name %></h3>
-      <% end %>
-      <p>You are near:</p>
-    </div>
+    <div class="content">
+      <div id="near">
+        <% if signed_in? %>
+          <span class='hey-user'>Hey, <%= current_user.name %></span>
+          <br/>
+          <span class='hey-user'>Hungry?</span>
+        <% end %>
+        <p>You are near:</p>
+      </div>
 
-    <div id="geo-location">
-      <span id="street-num"></span>
-      <span id="street-name"></span>
-      <span id="city-name"></span>
-    </div>
+      <div id="geo-location">
+        <span id="street-num"></span>
+        <span id="street-name"></span>
+        <span id="city-name"></span>
+      </div>
   <!-- This form gets the Geocoder object with the address entered in the form -->
-    <form id="address_search" action='/results' data-transition="pop" method='get'>
-      <button id="submit">Find Good Food</button>
-    </form>
+      <form id="address_search" action='/results' data-transition="pop" method='get'>
+        <button id="submit">Find Good Food</button>
+      </form>
 
-    <span id="unhide_address"><p>Click to enter a different address</p></span>
-    <div class="hide">
-      <%= render 'autocomplete' %>
+    <!-- <span id="unhide_address"><span class='search search-icon'></span>Different Address</span> -->
+
+      <span id="unhide_address"><p><span class='search search-icon'></span>Different Address</p></span>
+      <div class="hide">
+        <%= render 'autocomplete' %>
+      </div>
+
+      <ul id='bottom-list'>
+        <% if signed_in? %>
+          <li><a href="/sign_out">Sign Out</a></li>
+        <% else %>
+          <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+        <% end %>
+        <li id="divider"> | </li>
+        <li><a href="/about" data-ajax="false">About</a></li>
+      </ul>
     </div>
-
-    <ul id='bottom-list'>
-      <% if signed_in? %>
-        <li><a href="/sign_out">Sign Out</a></li>
-      <% else %>
-        <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
-      <% end %>
-      <li id="divider"> | </li>
-      <li><a href="/about" data-ajax="false">About</a></li>
-    </ul>
   </div>
 </div>

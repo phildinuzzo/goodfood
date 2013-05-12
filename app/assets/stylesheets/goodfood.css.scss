@@ -10,9 +10,32 @@ div.ui-page.ui-body-c.ui-page-active {
   min-height: 100%;
 }
 
+
+
+// #nav-panel {
+//   background: #3C435A;
+// }
+
+// .ui-btn-text {
+//   background: #1F324B;
+//   color: white;
+// }
+
 /* ------- INDEX -------- */
 
+.content {
+  margin: auto;
+  max-width: 35em;
+}
+
+.hey-user {
+  font-family: $OpenFont;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
 #current-location {
+  margin-left: .2em;
   font-weight: normal;
   color: $blue;
 }
@@ -32,6 +55,8 @@ div.ui-page.ui-body-c.ui-page-active {
 }
 
 #unhide_address p {
+  font-family: $OpenFont;
+  font-weight: 300;
   margin-top: 5%;
   margin-bottom: -1%;
   cursor: pointer;
@@ -67,7 +92,11 @@ div.ui-page.ui-body-c.ui-page-active {
 
 #near {
   text-align: center;
-  margin-top: 25%;
+  margin-top: 20%;
+}
+
+#near p {
+  margin-bottom: .1em;
 }
 
 #not-close {
@@ -387,6 +416,27 @@ hr {
 
 .map-star ul li {
   display: inline-block;
+}
+
+.map-icon {
+  opacity: 0.45;
+  display: inline-block;
+}
+
+.search-icon {
+  background: url(search.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.9em;
+  height: 1.9em;
+  background-size: 2.1em 2.1em;
+}
+
+.search.search-icon {
+  opacity: 0.5;
+  margin: 0 .1em;
+  display: inline-block;
+  margin-bottom: -.5em;
 }
 
 /* --------- Media Queries --------- */
