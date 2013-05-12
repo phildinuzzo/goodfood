@@ -19,8 +19,13 @@
   <div data-role="content">
     <div id="results">
       <% if @s == "Sorry! There's no good food there." %>
-        <div class="r_thumbnail">Sorry, good food is too far away!</div>
+
+        <div class="r_thumbnail">
+          <div id='far-away'>Sorry, good food is too far away!<br/>Consider cooking tonight.</div>
+        </div>
+
       <% else %>
+
       <% @s.each do |i| if i[:open] == true %>
       <div class="r_thumbnail">
 
