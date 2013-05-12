@@ -86,8 +86,15 @@ ul#bottom-list{
   margin-right: 2.4em;
 }
 
-a.ui-link {
+.phone a.ui-link {
   text-decoration: none;
+  color: #000;
+  font-weight: 300;
+}
+
+.phone a {
+  color: #000;
+  font-weight: 300;
 }
 
 /*-------- RESULTS --------*/
@@ -170,6 +177,10 @@ hr {
 
 .reviews {
   clear: both;
+  position: absolute;
+  left: 1em;
+  width: 80%;
+  bottom: .5em;
 }
 
 .reviews ul {
@@ -180,7 +191,7 @@ hr {
 
 .reviews ul li {
   margin-right: 1em;
-  display: inline;
+  display: inline-block;
 }
 
 .ui-header .ui-title {
@@ -203,6 +214,7 @@ hr {
 }
 
 .r_thumbnail {
+  position: relative;
   padding: .1em 1em;
   -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
   -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
@@ -315,6 +327,38 @@ hr {
     position:absolute;
 }
 
+.yelp-icon.ui-link {
+  opacity: 0.6;
+  display: inline-block;
+}
+
+.google-icon.ui-link {
+  opacity: 0.6;
+  display: inline-block;
+  margin-right: .3em;
+}
+
+
+.yelp-icon {
+  background-color: #f6f;
+  background: url(yelp.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.9em;
+  height: 1.5em;
+  background-size: 1.7em 1.5em;
+}
+
+.google-icon {
+  background: url(google.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
+}
+
+
 
 /* --------- Media Queries --------- */
 
@@ -361,6 +405,10 @@ and (max-width : 320px) {
     width: 12em;
   }
 
+  .reviews {
+    left: 2.5%;
+  }
+
   #login-with {
     padding: .2em;
     font-size: 2.1em;
@@ -378,6 +426,12 @@ and (max-width : 320px) {
     width: 35px;
     float: right;
     margin: .3em;
+  }
+
+  .google-icon {
+    width: 1.3em;
+    height: 1.45em;
+    background-size: 1.6em 1.4em;
   }
 
   #location_btn a.ui-link img {
