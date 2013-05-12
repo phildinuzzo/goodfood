@@ -6,8 +6,7 @@ gem 'jquery_mobile_rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-
+gem 'sqlite3'
 
 gem 'json', '~> 1.7.7'
 gem 'yelpster'
@@ -38,6 +37,7 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
+gem 'google-analytics-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
