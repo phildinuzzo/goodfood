@@ -34,18 +34,20 @@
           <ul>
             <li class='review_count'>Review Count:<%= i[:review_count] %></li>
             <li class='yelp_rating'><a href='<%= i[:yelp_url] %>' class='yelp-icon'>Y</a><%= i[:yelp_rating] %></li>
-            <li class='google_rating'><a href='' class='google-icon'>G</a><%= i[:google_rating] %></li>
+            <li class='google_rating'><a href='<%= i[:google_places_url] %>' class='google-icon'>G</a><%= i[:google_rating] %></li>
           </ul>
         </div>
 
         <div class='map-star'>
-          <% if i[:id].present? %>
-            <a href='/delete-favorite?id=<%= i[:id] %>'>Remove <%= i[:id] %></a>
-          <% else %>
-            <a href="/save-favorite?i=<%= Base64.encode64(i.to_json) %>">SAVE</a>
-          <% end %>
           <ul>
-            <li class='star-icon'>S</li>
+            <li>
+          <% if i[:id].present? %>
+            <a href='/delete-favorite?id=<%= i[:id] %>'><span id='favorite'>REMOVE</span></a>
+          <% else %>
+            <a href="/save-favorite?i=<%= Base64.encode64(i.to_json) %>"><span id='favorite'>SAVE</span></a>
+          <% end %>
+            </li>
+            <!-- <li class='star-icon'>S</li> -->
             <li ><a href="https://maps.google.com/?q=<%= i[:address] %>" class="map-icon">M</a></li>
           </ul>
         </div>

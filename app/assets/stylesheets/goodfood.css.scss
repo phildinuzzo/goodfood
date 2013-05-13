@@ -6,6 +6,10 @@ p {
   font-family: $OpenFont;
 }
 
+a {
+  text-decoration: none;
+}
+
 div.ui-page.ui-body-c.ui-page-active {
   min-height: 100%;
 }
@@ -134,10 +138,20 @@ ul#bottom-list{
   font-weight: 300;
 }
 
+#username {
+  font-weight: 300;
+  font-family: $OpenFont;
+  font-size: .75em;
+  margin-top: -.2em;
+  float: right;
+  height: 1em;
+  clear: both;
+}
+
 /*-------- RESULTS --------*/
 
 .ui-content {
-  padding: 2%;
+  padding: 1.4%;
 }
 
 #menu-panel {
@@ -170,9 +184,15 @@ ul#bottom-list{
 }
 
 #header-right {
-  width: 15em;
+  width: 60%;
   float: left;
   margin-left: 2.5%;
+}
+
+#header-left {
+  height: 4em;
+  float: right;
+  margin-right: 4.5%;
 }
 
 h1 {
@@ -191,7 +211,7 @@ hr {
 
 .address {
   float: left;
-  width: 13em;
+  width: 12em;
 }
 
 .phone {
@@ -303,7 +323,7 @@ hr {
 
 #login-with {
   padding: .4em;
-  font-size: 2.3em;
+  font-size: 2.1em;
   color: #464646;
   font-family: $OpenFont;
   font-weight: 300;
@@ -420,6 +440,9 @@ hr {
 .map-star ul {
   list-style-type: none;
   display: inline;
+  padding-left: 0;
+  float: right;
+  margin-bottom: -.2em;
 }
 
 .map-star ul li {
@@ -438,6 +461,13 @@ hr {
   width: 1.3em;
   height: 1.4em;
   background-size: 1.6em 1.4em;
+}
+
+span#favorite {
+  color: #000;
+  font-size: .7em;
+  font-family: $OpenFont;
+  font-weight: 300;
 }
 
 .search-icon {
@@ -482,6 +512,10 @@ and (max-width:455px) {
     font-size: 1.3em;
   }
 
+  #login-with {
+    font-size: 2em;
+  }
+
 }
 
 @media only screen
@@ -517,7 +551,7 @@ and (max-width : 320px) {
 
   #login-with {
     padding: .2em;
-    font-size: 2.1em;
+    font-size: 2em;
   }
 
   #login-inner {

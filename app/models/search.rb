@@ -44,6 +44,29 @@ class Search
       google_info['address'] = one_spot['vicinity']
     end
 
+    if one_spot.nil? || one_spot['reference'].nil?
+    google_info['website'] = "Restaurant website not available"
+    google_info['places_url'] = "Google Places website not available"
+  else
+    reference_id = one_spot['reference']
+    google_url = "https://maps.googleapis.com/maps/api/place/details/json?reference=#{reference_id}&sensor=true&key=#{ENV['GOOGLE_PLACES']}"
+    google_uri = URI.parse(URI.encode(google_url.strip))
+    file2 = open(google_uri, :ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE)
+    google_website = JSON.load(file2.read)['result']
+
+    if google_website['url'].nil?
+      google_info['places_url'] = "Google Places website not available"
+    else
+      google_info['places_url'] = google_website['url']
+    end
+
+    if google_website['website'].nil?
+      google_info['website'] = "Restaurant website not available"
+    else
+      google_info['website'] = google_website['website']
+    end
+  end
+
     google_info
   end
 
@@ -79,17 +102,20 @@ class Search
         address = "#{google_info['address']}, #{y['location']['state_code']} #{y['location']['postal_code']}"
 
         place_info = {name: name,
-                      distance: distance,
-                      open: google_info['is_open'],
-                      categories: categories || [],
-                      yelp_rating: yelp_avg_rating,
-                      google_rating: google_info['rating'],
-                      address: address,
-                      phone: phone,
-                      review_count: review_count,
-                      yelp_url: url,
-                      photo_url: google_info['photo'],
-                      coordinates: coordinates}
+                    distance: distance,
+                    open: google_info['is_open'],
+                    categories: categories || [],
+                    yelp_rating: yelp_avg_rating,
+                    google_rating: google_info['rating'],
+                    address: address,
+                    phone: phone,
+                    review_count: review_count,
+                    yelp_url: url,
+                    google_places_url: google_info['places_url'],
+                    restaurant_website: google_info['website'],
+                    photo_url: google_info['photo'],
+                    coordinates: coordinates}
+
 
         place_info
       end
