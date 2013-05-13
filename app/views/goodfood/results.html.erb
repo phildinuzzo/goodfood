@@ -19,94 +19,19 @@
   <div data-role="content">
     <div id="results">
       <% if @s == "Sorry! There's no good food there." %>
-        <div class="r_thumbnail">Sorry, good food is too far away!</div>
+
+        <div class="r_thumbnail">
+          <div id='far-away'>Sorry, good food is too far away!<br/>Consider cooking tonight.</div>
+        </div>
+
       <% else %>
-      <% @s.each do |i| if i[:open] == true %>
-      <div class="r_thumbnail">
 
-        <span class="r_name"><%= i[:name] %></span>
+      <% @s.each do |i|  %>
 
-        <div class='status'>
-          <% if i[:open] %>
-                <span class='open'>OPEN</span>
-          <% else %>
-                <span class='close'>CLOSED</span>
-          <% end %>
-        </div>
+        <%= render :partial => 'item', :locals => {:i => i} %>
 
-        <hr>
-        <div class="yelp_thmb">
-          <%= image_tag i[:photo_url] %>
-        </div>
-
-        <div class='category'>
-          <%= i[:categories] %>
-        </div>
-
-        <div class='address'>
-          <%= i[:address] %><a href="https://maps.google.com/?q=<%= i[:address] %>">MAP</a>
-        </div>
-
-        <div class='phone'>
-          <a href="tel:<%= i[:phone] %>"> <%= i[:phone] %></a>
-        </div>
-
-        <div class='reviews'>
-          <ul>
-            <li class='review_count'>Review Count:<%= i[:review_count] %></li>
-            <li class='yelp_rating'><%= i[:yelp_rating] %></li>
-            <li class='google_rating'><%= i[:google_rating] %></li>
-          </ul>
-        </div>
-
-
-      </div>
-    <% else %><% end %>
-    <% end %>
-<% @s.each do |i| if i[:open] == false %>
-      <div class="r_thumbnail">
-
-        <span class="r_name"><%= i[:name] %></span>
-
-        <div class='status'>
-          <% if i[:open] %>
-                <span class='open'>OPEN</span>
-          <% else %>
-                <span class='close'>CLOSED</span>
-          <% end %>
-        </div>
-
-        <hr>
-        <div class="yelp_thmb">
-          <%= image_tag i[:photo_url] %>
-        </div>
-
-        <div class='category'>
-          <%= i[:categories] %>
-        </div>
-
-        <div class='address'>
-          <%= i[:address] %><a href="https://maps.google.com/?q=<%= i[:address] %>">MAP</a>
-        </div>
-
-        <div class='phone'>
-          <a href="tel:<%= i[:phone] %>"> <%= i[:phone] %></a>
-        </div>
-
-        <div class='reviews'>
-          <ul>
-            <li class='review_count'>Review Count:<%= i[:review_count] %></li>
-            <li class='yelp_rating'><%= i[:yelp_rating] %></li>
-            <li class='google_rating'><%= i[:google_rating] %></li>
-          </ul>
-        </div>
-
-
-
-      </div>
-    <% else %><% end %>
-    <% end %>
-    <% end %>
+      <% end %> <!-- end of 'do' for the loop of building thumbnail -->
+    <% end %> <!-- end of 'do' for the loop of building thumbnail -->
 
 
       <ul id='bottom-list'>
@@ -118,7 +43,7 @@
         <li id="divider"> | </li>
         <li><a href="/about" data-ajax="false">About</a></li>
       </ul>
-    </div>
-  </div>
 
+    </div> <!-- end of results -->
+  </div> <!-- end of content -->
 </div> <!-- End of Page -->

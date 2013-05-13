@@ -1,4 +1,5 @@
 $OpenFont: 'Open Sans', sans-serif;
+$blue: #39A2E7;
 
 
 p {
@@ -9,14 +10,38 @@ div.ui-page.ui-body-c.ui-page-active {
   min-height: 100%;
 }
 
+
+
+// #nav-panel {
+//   background: #3C435A;
+// }
+
+// .ui-btn-text {
+//   background: #1F324B;
+//   color: white;
+// }
+
 /* ------- INDEX -------- */
 
+.content {
+  margin: auto;
+  max-width: 35em;
+}
+
+.hey-user {
+  font-family: $OpenFont;
+  font-weight: 300;
+  font-size: 1.4em;
+}
+
 #current-location {
+  margin-left: .2em;
   font-weight: normal;
-  color: #B4B4B4;
+  color: $blue;
 }
 
 #geo-location {
+  height: 1.4em;
   font-family: $OpenFont;
   font-weight: 600;
   font-size: 1.3em;
@@ -30,6 +55,8 @@ div.ui-page.ui-body-c.ui-page-active {
 }
 
 #unhide_address p {
+  font-family: $OpenFont;
+  font-weight: 300;
   margin-top: 5%;
   margin-bottom: -1%;
   cursor: pointer;
@@ -42,19 +69,34 @@ div.ui-page.ui-body-c.ui-page-active {
 
 #panel {
   max-width: 24em;
-  min-width: 24em;
   margin: auto;
 }
 
+.hide {
+  min-width: 100%;
+}
+
 #searchTextField {
+  height: 1.9em;
+  padding-top: .2em;
+  border: 0;
+  font-size: 1.2em;
+  color: $blue;
+  line-height: 1em;
+  max-height: 2em;
   max-width: 24em;
-  min-width: 24em;
+  min-width: 100%;
+  background-color: rgba(0, 0, 0, 0);
   margin: auto;
 }
 
 #near {
   text-align: center;
-  margin-top: 25%;
+  margin-top: 20%;
+}
+
+#near p {
+  margin-bottom: .1em;
 }
 
 #not-close {
@@ -73,15 +115,34 @@ ul#bottom-list{
   margin-right: 2.4em;
 }
 
-a.ui-link {
+.phone a.ui-link, .address a.ui-link {
   text-decoration: none;
+  color: #000;
+  font-weight: 300;
+}
+
+.phone a.ui-link:visited, .address a.ui-link:visited {
+  color: black;
+}
+
+.phone a.ui-link:hover, .address a.ui-link:hover {
+  color: #2489CE;
+}
+
+.phone a {
+  color: #000;
+  font-weight: 300;
 }
 
 /*-------- RESULTS --------*/
 
+.ui-content {
+  padding: 2%;
+}
+
 #menu-panel {
   float: right;
-  margin: 3% 5%;
+  margin: 1em 7%;
 }
 
 #menu-link {
@@ -130,7 +191,7 @@ hr {
 
 .address {
   float: left;
-  width: 15em;
+  width: 13em;
 }
 
 .phone {
@@ -153,6 +214,10 @@ hr {
 
 .reviews {
   clear: both;
+  position: absolute;
+  left: 1em;
+  width: 80%;
+  bottom: .5em;
 }
 
 .reviews ul {
@@ -163,7 +228,7 @@ hr {
 
 .reviews ul li {
   margin-right: 1em;
-  display: inline;
+  display: inline-block;
 }
 
 .ui-header .ui-title {
@@ -186,6 +251,7 @@ hr {
 }
 
 .r_thumbnail {
+  position: relative;
   padding: .1em 1em;
   -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
   -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
@@ -220,7 +286,7 @@ hr {
 }
 
 .ui-header {
-  height: 60px;
+  height: 4.5em;
 }
 
 ::-webkit-input-placeholder {
@@ -286,6 +352,8 @@ hr {
 .yelp_thmb img {
   max-height: 150px;
   float: right;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #ACACAC;
 }
@@ -296,6 +364,107 @@ hr {
     position:absolute;
 }
 
+.yelp-icon.ui-link {
+  opacity: 0.6;
+  display: inline-block;
+}
+
+.google-icon.ui-link {
+  opacity: 0.6;
+  display: inline-block;
+  margin-right: .3em;
+}
+
+
+.yelp-icon {
+  background-color: #f6f;
+  background: url(yelp.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.9em;
+  height: 1.5em;
+  background-size: 1.7em 1.5em;
+}
+
+.google-icon {
+  background: url(google.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
+}
+
+.map-icon {
+  opacity: 0.45;
+  display: inline-block;
+}
+
+.map-icon {
+  background: url(location.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
+}
+
+.map-star {
+  clear: both;
+  position: absolute;
+  right: 1em;
+  width: 20%;
+  bottom: .5em;
+}
+
+.map-star ul {
+  list-style-type: none;
+  display: inline;
+}
+
+.map-star ul li {
+  display: inline-block;
+}
+
+.star-icon {
+  opacity: 0.45;
+  display: inline-block;
+}
+
+.star-icon {
+  background: url(star.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
+}
+
+.search-icon {
+  background: url(search.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.9em;
+  height: 1.9em;
+  background-size: 2.1em 2.1em;
+}
+
+.search.search-icon {
+  opacity: 0.5;
+  margin: 0 .1em;
+  display: inline-block;
+  margin-bottom: -.5em;
+}
+
+#far-away {
+  color: #FF401B;
+  text-align: center;
+  font-family: $OpenFont;
+  font-weight: 300;
+  font-size: 1.3em;
+  margin-top: 2.4em;
+}
+
 
 /* --------- Media Queries --------- */
 
@@ -303,6 +472,14 @@ hr {
 and (max-width:455px) {
   #login-inner, #search-inner {
   padding: 2em .7em;
+  }
+
+  .close, .open {
+    font-size: .8em;
+  }
+
+  .r_name {
+    font-size: 1.3em;
   }
 
 }
@@ -334,6 +511,10 @@ and (max-width : 320px) {
     width: 12em;
   }
 
+  .reviews {
+    left: 2.5%;
+  }
+
   #login-with {
     padding: .2em;
     font-size: 2.1em;
@@ -353,6 +534,12 @@ and (max-width : 320px) {
     margin: .3em;
   }
 
+  .google-icon {
+    width: 1.3em;
+    height: 1.45em;
+    background-size: 1.6em 1.4em;
+  }
+
   #location_btn a.ui-link img {
     width: 3em;
     float: right;
@@ -362,8 +549,8 @@ and (max-width : 320px) {
 /* --------------------------------- */
 
 .ui-overlay-shadow {
-  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
   -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
+  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
   box-shadow: 0 1px 3px rgba(192, 192, 192, .6);
 }
 

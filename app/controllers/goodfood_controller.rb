@@ -19,6 +19,7 @@ class GoodfoodController < ApplicationController
 
     @lat = params[:lat]
     @lng = params[:lng]
+
     coords = @lat + "," + @lng
     @geo_data = Geocoder.search(coords)
     @st_num = @geo_data[0].address_components[0]["long_name"]
@@ -35,7 +36,18 @@ class GoodfoodController < ApplicationController
     else
       @s = Search.good_food_places_info(@lat, @lng)
     end
-  # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
+
+    # JY: Sort results to insure that open items appear first
+    @s.sort! { |a,b|
+      a_openness = a[:open] ? '0 ' : '1 '
+      b_openness = b[:open] ? '0 ' : '1 '
+      a_comp = a_openness + a[:name]
+      b_comp = b_openness + b[:name]
+      puts "#{a_comp} <=> #{b_comp}"
+      a_comp <=> b_comp
+    }
+
+    # map.setCenter(results[0].geometry.location); FOR USE WITH MAP!!
   end
 
   def get_address
@@ -58,6 +70,33 @@ class GoodfoodController < ApplicationController
 
   def search
   end
+
+  def save_favorite
+    # decode
+    @i = ActiveSupport::JSON.decode Base64.decode64(params[:i])
+    @i.symbolize_keys!
+    Favorite.create(:data => @i.to_json, :user_id => current_user.id)
+    redirect_to :favorites
+    #render :result
+  end
+
+  def favorites
+    # set the id on each
+    @s = current_user.favorites.collect do |f|
+      # decode the hash
+      i = ActiveSupport::JSON.decode(f.data).symbolize_keys
+      i[:id] = f.id
+      i
+    end
+    render 'results'
+  end
+
+  def delete_favorite
+    f = Favorite.find(params[:id])
+    f.destroy
+    redirect_to :favorites
+  end
+
 end
 
 
