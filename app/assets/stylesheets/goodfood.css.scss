@@ -304,6 +304,19 @@ hr {
   height: 4.5em;
 }
 
+.ui-btn-up-a {
+  font-family: $OpenFont;
+  font-weight: 300;
+}
+
+
+
+.ui-btn-hover-a, a.ui-link-inherit {
+  color: #0F1316;
+  font-family: $OpenFont;
+  font-weight: 300;
+}
+
 ::-webkit-input-placeholder {
   color: #DADADA;
   text-align: center;
