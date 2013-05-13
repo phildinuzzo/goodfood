@@ -1,7 +1,6 @@
 
 <div data-role="panel" data-position-fixed="true" data-theme="a" id="nav-panel">
         <ul data-role="listview" data-theme="a">
-
             <li>
               <% if signed_in? %>
                 <%= current_user.name %>
@@ -14,11 +13,11 @@
                   <a href='/favorites'>Favorites</a>
               <% end %>
             </li>
-            <li><a href="/search" data-transition="flip">Search</a></li>
+            <!-- <li><a href="/search" data-transition="flip">Search</a></li> -->
             <li><a href="/about" data-transition="flip">About</a></li>
             <li>
               <% if signed_in? %>
-                  <a href="/sign_out">Sign Out</a>
+                  <a href="/sign_out" data-ajax="false" data-transition="flip">Sign Out</a>
               <% else %>
                   <a href="/login" data-rel="dialog" data-transition="flip">Sign In</a>
               <% end %>
