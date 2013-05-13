@@ -8,11 +8,6 @@
             </li>
             <li><a href="/results" data-icon="delete" data-rel="close">Close menu</a></li>
             <li><a href="/" data-icon="home" data-ajax="false" data-transition="flip">Home</a></li>
-            <li>
-              <% if signed_in? %>
-                  <a href='/favorites'>Favorites</a>
-              <% end %>
-            </li>
             <!-- <li><a href="/search" data-transition="flip">Search</a></li> -->
             <li><a href="/about" data-transition="flip">About</a></li>
             <li>
@@ -20,6 +15,11 @@
                   <a href="/sign_out" data-ajax="false" data-transition="flip">Sign Out</a>
               <% else %>
                   <a href="/login" data-rel="dialog" data-transition="flip">Sign In</a>
+              <% end %>
+            </li>
+            <li>
+              <% if signed_in? %>
+                  <a href='/favorites'>Favorites</a>
               <% end %>
             </li>
         </ul>
