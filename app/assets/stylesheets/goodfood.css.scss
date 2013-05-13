@@ -503,6 +503,29 @@ span#favorite {
 }
 
 
+.button2 a {
+  color: white;
+  background-color: #888;
+  padding: 10px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  -o-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.button2 a:hover {
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #DA4B39;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+
 /* --------- Media Queries --------- */
 
 @media screen
