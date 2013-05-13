@@ -1,12 +1,4 @@
 class Favorite < ActiveRecord::Base
-  attr_accessible :address, :user_id
+  attr_accessible :data, :user_id
   belongs_to :user
-
-
-  def add_favorite
-
-  end
-
-
-
 end

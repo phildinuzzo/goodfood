@@ -5,9 +5,14 @@ Goodfood::Application.routes.draw do
   get '/about' => 'goodfood#about'
   get '/login' => 'goodfood#login'
   get '/search' => 'goodfood#search'
+  get '/favorites' => 'goodfood#favorites', :as => :favorites
   match '/auth/:provider/callback' => 'sessions#create'
   match 'sign_out' => 'sessions#destroy', :as => :signout
   post 'index' => 'goodfood#get_address'
+
+  get '/save-favorite' => 'goodfood#save_favorite'
+  get '/delete-favorite' => 'goodfood#delete_favorite'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

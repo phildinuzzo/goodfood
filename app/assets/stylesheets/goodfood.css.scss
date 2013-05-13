@@ -121,6 +121,14 @@ ul#bottom-list{
   font-weight: 300;
 }
 
+.phone a.ui-link:visited, .address a.ui-link:visited {
+  color: black;
+}
+
+.phone a.ui-link:hover, .address a.ui-link:hover {
+  color: #2489CE;
+}
+
 .phone a {
   color: #000;
   font-weight: 300;
@@ -278,7 +286,7 @@ hr {
 }
 
 .ui-header {
-  height: 60px;
+  height: 4.5em;
 }
 
 ::-webkit-input-placeholder {
@@ -418,9 +426,18 @@ hr {
   display: inline-block;
 }
 
-.map-icon {
+.star-icon {
   opacity: 0.45;
   display: inline-block;
+}
+
+.star-icon {
+  background: url(star.svg);
+  display: block;
+  text-indent: -9999px;
+  width: 1.3em;
+  height: 1.4em;
+  background-size: 1.6em 1.4em;
 }
 
 .search-icon {

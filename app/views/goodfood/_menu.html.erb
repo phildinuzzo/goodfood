@@ -5,9 +5,9 @@
             <li><a href="/" data-icon="home" data-ajax="false" data-transition="flip">Home</a></li>
             <li>
               <% if signed_in? %>
-                  <li><a href="/sign_out">Sign Out</a></li>
+                  <a href="/sign_out">Sign Out</a>
               <% else %>
-                  <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
+                  <a href="/login" data-rel="dialog" data-transition="flip">Sign In</a>
               <% end %>
             </li>
             <li><a href="/search" data-transition="flip">Search</a></li>
