@@ -84,6 +84,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <form accept-charset="UTF-8" action="/results" method="get">
         <input id="searchTextField" type="text" name="query" placeholder="">
         <input type="hidden" name="type" id="changetype-geocode">
+        <button id="submit">Search By Address</button>
     </form>
+
+    <!-- <form id="address_search" action='/results' data-transition="pop" method='get'>
+        <button id="submit">Find Good Food</button>
+      </form> -->
+
     </div>
     <div id="map-canvas"></div>
