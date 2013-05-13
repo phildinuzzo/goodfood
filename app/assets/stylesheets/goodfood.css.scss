@@ -546,6 +546,16 @@ and (max-width : 320px) {
     margin: .4em .7em .4em .4em;
   }
 }
+/* ----------About----------------- */
+
+.about a {
+  text-decoration: none;
+}
+
+.about p {
+  margin-top: -1em;
+}
+
 /* --------------------------------- */
 
 .ui-overlay-shadow {
