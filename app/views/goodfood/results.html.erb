@@ -3,13 +3,22 @@
   <%= render 'menu' %>
 
   <div data-role="header" data-position="fixed">
+
     <div id='header-right'>
       <h1>GoodFood</h1>
       <div id='current-location'><%= @city %></div>
     </div>
 
-    <div id='menu-panel'>
-        <a href="#nav-panel" class="box-shadow-menu" title="Navigation"><span id='menu-link'></span></a>
+    <div id='header-left'>
+      <div id='menu-panel'>
+          <a href="#nav-panel" class="box-shadow-menu" title="Navigation"><span id='menu-link'></span></a>
+      </div>
+
+      <div id='username'>
+        <% if signed_in? %>
+          <span><%= current_user.name %></span>
+        <% end %>
+      </div>
     </div>
 <!--     <div id='location_btn' data-icon="bars">
       <a href="/search" data-rel="dialog" data-transition="flip"></a>
