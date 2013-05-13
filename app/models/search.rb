@@ -33,7 +33,7 @@ class Search
     end
 
     if one_spot.nil?
-      google_info['rating'] = "Not available"
+      google_info['rating'] = "n/a"
     else
       google_info['rating'] = one_spot['rating']
     end
@@ -45,8 +45,8 @@ class Search
     end
 
     if one_spot.nil? || one_spot['reference'].nil?
-    google_info['website'] = "Restaurant website not available"
-    google_info['places_url'] = "Google Places website not available"
+    google_info['website'] = "n/a"
+    google_info['places_url'] = "n/a"
   else
     reference_id = one_spot['reference']
     google_url = "https://maps.googleapis.com/maps/api/place/details/json?reference=#{reference_id}&sensor=true&key=#{ENV['GOOGLE_PLACES']}"
@@ -55,13 +55,13 @@ class Search
     google_website = JSON.load(file2.read)['result']
 
     if google_website['url'].nil?
-      google_info['places_url'] = "Google Places website not available"
+      google_info['places_url'] = "n/a"
     else
       google_info['places_url'] = google_website['url']
     end
 
     if google_website['website'].nil?
-      google_info['website'] = "Restaurant website not available"
+      google_info['website'] = "n/a"
     else
       google_info['website'] = google_website['website']
     end

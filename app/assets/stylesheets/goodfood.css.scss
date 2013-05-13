@@ -1,6 +1,12 @@
 $OpenFont: 'Open Sans', sans-serif;
 $blue: #39A2E7;
 
+textarea:focus, input[type="text"]:focus,
+input[type="password"]:focus, input[type="email"]:focus,
+.uneditable-input:focus {
+outline: 0 none;
+}
+
 
 p {
   font-family: $OpenFont;
@@ -13,17 +19,6 @@ a {
 div.ui-page.ui-body-c.ui-page-active {
   min-height: 100%;
 }
-
-
-
-// #nav-panel {
-//   background: #3C435A;
-// }
-
-// .ui-btn-text {
-//   background: #1F324B;
-//   color: white;
-// }
 
 /* ------- INDEX -------- */
 
@@ -273,10 +268,10 @@ hr {
 .r_thumbnail {
   position: relative;
   padding: .1em 1em;
-  -moz-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
-  -webkit-box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
-  box-shadow: 0 1px 3px rgba(192, 192, 192, 0.6);
-  margin: .4em auto;
+  -moz-box-shadow: 0 1px 3px rgba(155, 155, 155, 0.6);
+  -webkit-box-shadow: 0 1px 3px rgba(155, 155, 155, 0.6);
+  box-shadow: 0 1px 3px rgba(155, 155, 155, 0.6);
+  margin: .5em auto;
   background-color: #FAFAFA;
   min-height: 13em;
   max-width: 24em;
@@ -375,7 +370,6 @@ hr {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #ACACAC;
 }
 
 .yelp_thmb img.absolute{
@@ -539,6 +533,11 @@ and (max-width : 320px) {
   .yelp_thmb {
     width: 80px;
     height: 80px;
+  }
+
+  .yelp_thmb img {
+    margin-top: -.7em;
+    margin-right: -.7em;
   }
 
   .address {

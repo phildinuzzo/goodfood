@@ -41,11 +41,13 @@
         <div class='map-star'>
           <ul>
             <li>
-          <% if i[:id].present? %>
-            <a href='/delete-favorite?id=<%= i[:id] %>'><span id='favorite'>REMOVE</span></a>
-          <% else %>
-            <a href="/save-favorite?i=<%= Base64.encode64(i.to_json) %>"><span id='favorite'>SAVE</span></a>
-          <% end %>
+              <% if signed_in? %>
+                <% if i[:id].present? %>
+                  <a href='/delete-favorite?id=<%= i[:id] %>'><span id='favorite'>REMOVE</span></a>
+                <% else %>
+                  <a href="/save-favorite?i=<%= Base64.encode64(i.to_json) %>"><span id='favorite'>SAVE</span></a>
+                <% end %>
+              <% end %>
             </li>
             <!-- <li class='star-icon'>S</li> -->
             <li ><a href="https://maps.google.com/?q=<%= i[:address] %>" class="map-icon">M</a></li>
