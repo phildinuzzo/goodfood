@@ -21,32 +21,24 @@
 <!-- ~~~~~~~~~~~~Results start below~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <div data-role="content">
     <div id="results">
-      <% if @s == "Sorry! There's no good food there." %>
+      <div id='grid'>
+        <% if @s == "Sorry! There's no good food there." %>
 
-        <div class="r_thumbnail">
-          <div id='far-away'>Sorry, good food is too far away!<br/>Consider cooking tonight.</div>
-        </div>
+          <div class="r_thumbnail">
+            <div id='far-away'>Sorry, good food is too far away!<br/>Consider cooking tonight.</div>
+          </div>
 
-      <% else %>
-
-      <% @s.each do |i|  %>
-
-        <%= render :partial => 'item', :locals => {:i => i} %>
-
-      <% end %> <!-- end of 'do' for the loop of building thumbnail -->
-    <% end %> <!-- end of 'do' for the loop of building thumbnail -->
-
-
-      <ul id='bottom-list'>
-        <% if signed_in? %>
-          <li><a href="/sign_out">Sign Out</a></li>
         <% else %>
-          <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
-        <% end %>
-        <li id="divider"> | </li>
-        <li><a href="/about" data-ajax="false">About</a></li>
-      </ul>
 
+        <% @s.each do |i|  %>
+
+          <%= render :partial => 'item', :locals => {:i => i} %>
+
+        <% end %> <!-- end of 'do' for the loop of building thumbnail -->
+        <% end %> <!-- end of 'do' for the loop of building thumbnail -->
+
+
+      </div> <!-- end of grid -->
     </div> <!-- end of results -->
   </div> <!-- end of content -->
 </div> <!-- End of Page -->

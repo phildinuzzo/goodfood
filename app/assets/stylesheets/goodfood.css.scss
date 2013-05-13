@@ -113,6 +113,7 @@ div.ui-page.ui-body-c.ui-page-active {
 }
 
 ul#bottom-list{
+  clear: both;
   text-align: center;
   margin-top: 15%;
   margin-right: 2.4em;
@@ -530,7 +531,24 @@ span#favorite {
 }
 
 
+
 /* --------- Media Queries --------- */
+@media screen
+and (min-width:885px) {
+
+  .r_thumbnail {
+    margin-right: .5em;
+    float: left;
+    width: 22em;
+  }
+
+  #grid {
+    width: 810px;
+    margin: auto;
+  }
+
+}
+
 
 @media screen
 and (max-width:455px) {
