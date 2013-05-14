@@ -11,18 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130510232853) do
+ActiveRecord::Schema.define(:version => 20130512224247) do
 
   create_table "favorites", :force => true do |t|
     t.integer  "user_id"
-    t.string   "address"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.boolean  "saved"
+    t.text     "data"
   end
 
   create_table "providers", :force => true do |t|
-    t.integer  "uid"
+    t.decimal  "uid"
     t.string   "provider"
     t.string   "token"
     t.datetime "created_at", :null => false

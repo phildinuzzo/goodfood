@@ -16,10 +16,6 @@
 
       autocomplete.bindTo('bounds', map);
 
-      var infowindow = new google.maps.InfoWindow();
-      var marker = new google.maps.Marker({
-        map: map
-      });
 
       google.maps.event.addListener(autocomplete, 'place_changed', function() {
         infowindow.close();
@@ -61,7 +57,8 @@
            infowindow.open(map, marker);
          });
 
-// Sets a listener on a radio button to change the filter type on Places
+
+      // Sets a listener on a radio button to change the filter type on Places
   // Autocomplete.
   function setupClickListener(id, types) {
     var radioButton = document.getElementById(id);
@@ -69,6 +66,7 @@
       autocomplete.setTypes(types);
     });
   }
+
 
   setupClickListener('changetype-all', []);
   setupClickListener('changetype-establishment', ['establishment']);
