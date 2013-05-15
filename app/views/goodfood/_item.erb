@@ -16,13 +16,13 @@
         <hr>
 
 
-        <a href="#popupImage" data-rel="popup" data-position-to="window" data-transition="fade">
+        <a href="#popupImage<%= i[:phone] %>" data-rel="popup" data-position-to="window" data-transition="fade">
           <%= image_tag i[:photo_url], :class =>"yelp_thmb" %>
         </a>
 
 
 
-        <div data-role="popup" id="popupImage" data-overlay-theme="a" data-theme="d" data-corners="false">
+        <div data-role="popup" id="popupImage<%= i[:phone] %>" data-overlay-theme="a" data-theme="d" data-corners="false">
 
           <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 
