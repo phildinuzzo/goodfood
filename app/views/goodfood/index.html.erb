@@ -41,7 +41,7 @@
 
       <ul id='bottom-list'>
         <% if signed_in? %>
-          <li><a href="/sign_out">Sign Out</a></li>
+          <li><a href="/sign_out" data-ajax="false">Sign Out</a></li>
         <% else %>
           <li><a href="/login" data-rel="dialog" data-transition="flip">Sign In</a></li>
         <% end %>
