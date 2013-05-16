@@ -512,6 +512,17 @@ span#favorite {
   margin-top: 2.4em;
 }
 
+.ui-popup-screen.in {
+  opacity: .6;
+  background-color: #000;
+}
+
+.ui-popup-container {
+  border: .3em solid #FFF;
+  -webkit-box-shadow: 0px 2px 18px #000;
+  -moz-box-shadow: 0px 2px 18px #000;
+  box-shadow: 0px 2px 18px #000;
+}
 
 
 /* --------- Media Queries --------- */
