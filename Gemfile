@@ -6,7 +6,7 @@ gem 'jquery_mobile_rails'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+gem 'sqlite3'
 
 gem 'json', '~> 1.7.7'
 gem 'yelpster'
@@ -26,7 +26,6 @@ end
 group :development, :test do
   gem 'simplecov', :require => false
   gem 'rspec-rails', '~> 2.0'
-  gem 'capybara'
 end
 
 group :assets do
