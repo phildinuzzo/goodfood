@@ -15,6 +15,8 @@
           <span class='hey-user'>Hey, <%= current_user.name %></span>
           <br/>
           <span class='hey-user'>Hungry?</span>
+        <% else %>
+          <span class='four-stars'>Only Places with Four Stars or Higher!</span>
         <% end %>
         <p>You are near:</p>
       </div>
