@@ -8,9 +8,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
+  <!-- iPhone -->
   <link rel="apple-touch-startup-image" href="/assets/startup.png">
-  <link href="/assets/startup5.png"  media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
-  <link href="/assets/startup.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+  <!-- iPhone retina -->
+  <link href="/assets/startupR.png"
+      media="(device-width: 320px) and (device-height: 480px)
+         and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+  <!-- iphone 5 -->
+  <link href="/assets/startup5.png"
+      media="(device-width: 320px) and (device-height: 568px)
+         and (-webkit-device-pixel-ratio: 2)"
+      rel="apple-touch-startup-image">
+
   <link rel="apple-touch-icon-precomposed" href="/assets/startup.png"/>
   <link rel="apple-touch-icon" href="/assets/gf_icon_57.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/assets/gf_icon_72.png" />
