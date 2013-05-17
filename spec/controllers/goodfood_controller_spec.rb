@@ -3,18 +3,18 @@ require 'spec_helper'
 describe GoodfoodController do
   describe "#results", "geocode" do
     it "should be return array of results" do
-      get :results, {:lat => "47.368594", :lng => "-122.178955"}
+      get :results, :lat => 47.368594, :lng => -122.178955
       assigns(:state).should eq "WA"
     end
 
     it "should be return array of results even if query is not nil" do
-      get :results, {:query => "seattle", :lat => "47.368594", :lng => "-122.178955"}
+      get :results, :lat => "47.368594", :lng => "-122.178955"
     end
   end
 
   describe "#get_address" do
     it "should save geo data into a hash" do
-      get :get_address, {:lat => "47.368594", :lng => "-122.178955"}
+      get :get_address, :lat => "47.368594", :lng => "-122.178955"
     end
   end
 
