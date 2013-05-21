@@ -31,6 +31,10 @@ div.ui-page.ui-body-c.ui-page-active {
   max-width: 35em;
 }
 
+#page-header {
+  opacity: 0.9;
+}
+
 .hey-user, .four-stars {
   font-family: $OpenFont;
   font-weight: 300;
@@ -291,6 +295,14 @@ hr {
   width: 14em;
   font-family: $OpenFont;
   font-size: 1.5em;
+  color: #464646;
+  font-weight: 300;
+}
+
+.small_r_name {
+  width: 14em;
+  font-family: $OpenFont;
+  font-size: 1.3em;
   color: #464646;
   font-weight: 300;
 }

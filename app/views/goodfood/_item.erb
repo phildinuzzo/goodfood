@@ -1,7 +1,9 @@
 
       <div class="r_thumbnail">
 
-        <span class="r_name"><%= i[:name] %></span>
+        <span class="r_name<%= i[:name].size > 27 ? ' small_r_name' : nil %>">
+          <%= i[:name] %>
+        </span>
 
         <div class='status'>
           <% if i[:id].blank? %>
