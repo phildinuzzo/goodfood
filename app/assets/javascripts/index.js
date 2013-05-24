@@ -34,13 +34,6 @@ $(document).ready(function(){
             .attr('name', 'lng')
             .val(geo_data.longitude)
              );
-
-
-
-
-
-
-
       },
       error: function() {
       }
