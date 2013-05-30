@@ -16,11 +16,15 @@ a {
   text-decoration: none;
 }
 
-.ui-link h1 {
+.content h1 {
+  text-align: center;
+  font-size: 2.7em;
+}
+
+.ui-link h1, .content h1 {
   color: #3f3f3f;
   text-shadow: 2px 2px 1px #FFF, 2px 2px 2px #2E2E2E;
   // text-shadow: .09em .09em .09em #FFF, .09em .09em .05em #3C3C3C;
-}
 }
 
 div.ui-page.ui-body-c.ui-page-active {
@@ -103,7 +107,7 @@ div.ui-page.ui-body-c.ui-page-active {
 
 #near {
   text-align: center;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 #near p {
