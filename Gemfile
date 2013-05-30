@@ -13,6 +13,7 @@ gem 'yelpster'
 gem 'google_places'
 
 gem 'geocoder'
+gem 'airbrake'
 
 
 
