@@ -11,11 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //
-//  ! Andris ! - I switched the jq mobile to come after goodread.js based
-//  on documentation at this page:
-//  http://jquerymobile.com/demos/1.2.1/docs/api/globalconfig.html
-//
-//
 //= require jquery
 //= require jquery_ujs
 //= require jquery.mobile-1.3.1.min.js

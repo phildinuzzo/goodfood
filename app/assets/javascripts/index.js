@@ -46,6 +46,8 @@ $(document).ready(function(){
     console.log("no geolocation");
   }
 
+//////////////////////////// AUTOCOMPLETE ///////////////////////////
+
   function initialize() {
 
       var input = /** @type {HTMLInputElement} */(document.getElementById('searchTextField'));
